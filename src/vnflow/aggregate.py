@@ -54,6 +54,8 @@ def daily_summary(trades: pd.DataFrame) -> pd.DataFrame:
             "open": x["price"].iloc[0], "high": x["price"].max(), "low": x["price"].min(),
             "close": x["price"].iloc[-1],
             "vol": int(x["vol"].sum()), "value": float(x["value"].sum()),
+            "source_acc_vol": int(x["acc_vol"].max()),
+            "missing_vol": int(x["acc_vol"].max() - x["vol"].sum()),  # KL nguồn báo nhưng thiếu lệnh chi tiết
             "buy_vol": buy, "sell_vol": sell, "delta": buy - sell,
             "ato_vol": int(x.loc[x.session == "ATO", "vol"].sum()),
             "atc_vol": int(x.loc[x.session == "ATC", "vol"].sum()),

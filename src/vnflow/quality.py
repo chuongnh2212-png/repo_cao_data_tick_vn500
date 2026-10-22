@@ -6,6 +6,9 @@ import pandas as pd
 
 from . import config
 
+# Nguồn DSC đôi khi thiếu vài lệnh lẻ (SSI 22/10/2026: 3 lệnh, 0,08% KL). Dưới ngưỡng này chỉ cảnh báo.
+MISSING_TOLERANCE = 0.005
+
 
 def check_trades(trades: pd.DataFrame) -> list[dict]:
     """Kiểm tra khớp lệnh một mã/ngày. Trả về danh sách vấn đề (rỗng = sạch)."""
@@ -17,12 +20,17 @@ def check_trades(trades: pd.DataFrame) -> list[dict]:
             issues.append({"symbol": sym, "date": str(d), "check": check, "level": level, "detail": detail})
 
         total = int(x["vol"].sum())
-        if int(x["acc_vol"].iloc[-1]) != total:
-            add("acc_vol", f"lũy kế cuối {int(x['acc_vol'].iloc[-1])} ≠ tổng KL {total} → thiếu bản ghi", "error")
+        acc = int(x["acc_vol"].max())
+        if acc != total:
+            gaps = int(((x["acc_vol"].diff() != x["vol"]) & x["acc_vol"].diff().notna()).sum())
+            miss = (acc - total) / max(acc, 1)
+            level = "warn" if abs(miss) <= MISSING_TOLERANCE else "error"
+            add("acc_vol", f"nguồn thiếu {acc - total:,} cp ({miss:.2%}) ở {gaps} chỗ; lũy kế {acc:,} vs cộng lệnh {total:,}", level)
         buy = int(x.loc[x.side == "B", "vol"].sum())
         sell = int(x.loc[x.side == "S", "vol"].sum())
-        if int(x["cum_buy"].iloc[-1]) != buy or int(x["cum_sell"].iloc[-1]) != sell:
-            add("side_totals", f"mua/bán chủ động lũy kế {int(x['cum_buy'].iloc[-1])}/{int(x['cum_sell'].iloc[-1])} ≠ cộng từng lệnh {buy}/{sell}")
+        cb, cs = int(x["cum_buy"].max()), int(x["cum_sell"].max())
+        if abs(cb - buy) + abs(cs - sell) > MISSING_TOLERANCE * max(total, 1):
+            add("side_totals", f"mua/bán chủ động lũy kế {cb:,}/{cs:,} ≠ cộng từng lệnh {buy:,}/{sell:,}")
         if x["time"].iloc[-1] < config.SESSION_CLOSE:
             add("incomplete_day", f"lệnh cuối lúc {x['time'].iloc[-1]} < {config.SESSION_CLOSE} → có thể lấy giữa phiên")
         ex = x["exchange"].iloc[0]
