@@ -1,0 +1,4 @@
+# Danh sách mã thu thập hằng ngày, mỗi dòng một mã. Dòng bắt đầu bằng # là ghi chú.
+# TODO: thay bằng danh sách VN500 người dùng cung cấp.
+SSI
+MBB

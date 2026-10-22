@@ -1,0 +1,27 @@
+[project]
+name = "vn-orderflow"
+version = "0.1.0"
+description = "Thu thập khớp lệnh và phân tích cung cầu cổ phiếu Việt Nam"
+requires-python = ">=3.10"
+dependencies = [
+  "pandas>=2.1",
+  "pyarrow>=14",
+  "requests>=2.31",
+  "matplotlib>=3.8",
+  "openpyxl>=3.1",
+  "tabulate>=0.9",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8"]
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
