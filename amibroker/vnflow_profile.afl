@@ -32,14 +32,14 @@ if (fh)
     hdr = fgets(fh);
     while (! feof(fh))
     {
-        ln = fgets(fh);
-        if (StrLen(ln) > 10)
+        lineTxt = fgets(fh);
+        if (StrLen(lineTxt) > 10)
         {
-            d = StrToNum(StrExtract(ln, 0));
+            d = StrToNum(StrExtract(lineTxt, 0));
             if (d >= d1 AND d <= d2)
             {
                 if (d != lastD) { nDaysRead++; lastD = d; }
-                k = NumToStr(round(StrToNum(StrExtract(ln, 2)) * 1000), 1.0, False);
+                k = NumToStr(round(StrToNum(StrExtract(lineTxt, 2)) * 1000), 1.0, False);
                 if (StrFind(keys, "," + k + ",") == 0)
                 {
                     keys = keys + k + ",";
@@ -48,9 +48,9 @@ if (fh)
                     VarSet("vs" + k, 0);
                     VarSet("vu" + k, 0);
                 }
-                VarSet("vb" + k, VarGet("vb" + k) + StrToNum(StrExtract(ln, 4)));
-                VarSet("vs" + k, VarGet("vs" + k) + StrToNum(StrExtract(ln, 5)));
-                VarSet("vu" + k, VarGet("vu" + k) + StrToNum(StrExtract(ln, 6)));
+                VarSet("vb" + k, VarGet("vb" + k) + StrToNum(StrExtract(lineTxt, 4)));
+                VarSet("vs" + k, VarGet("vs" + k) + StrToNum(StrExtract(lineTxt, 5)));
+                VarSet("vu" + k, VarGet("vu" + k) + StrToNum(StrExtract(lineTxt, 6)));
             }
         }
     }

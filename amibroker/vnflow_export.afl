@@ -1,5 +1,5 @@
 // ============================================================================
-// vnflow_export.afl (ban 2 - cu phap toi gian) - Xuat lich su MetaKit ra CSV, moi ma mot file.
+// vnflow_export.afl (ban 3 - doi ten bien tranh trung ham CCI) - Xuat lich su MetaKit ra CSV, moi ma mot file.
 //   Moi dong = 1 phien: gia (ma goc) + cung cau dat lenh (_CC) + khoi ngoai (_NN).
 // Cach chay: Analysis > Formula: file nay > Apply to: watchlist ma goc
 //            > Range: From-To dates (01/01/2015 -> nay) > Settings: Periodicity Daily > EXPLORE.
@@ -20,14 +20,14 @@ fileOk = 0;
 
 if (isBase AND (act == actionExplore OR act == actionScan))
 {
-    ccO = Foreign(sym + "_CC", "O", 0);
-    ccC = Foreign(sym + "_CC", "C", 0);
-    ccV = Foreign(sym + "_CC", "V", 0);
-    ccI = Foreign(sym + "_CC", "I", 0);
-    nnO = Foreign(sym + "_NN", "O", 0);
-    nnC = Foreign(sym + "_NN", "C", 0);
-    nnV = Foreign(sym + "_NN", "V", 0);
-    nnI = Foreign(sym + "_NN", "I", 0);
+    xCcBan = Foreign(sym + "_CC", "O", 0);
+    xCcMua = Foreign(sym + "_CC", "C", 0);
+    xCcLenhBan = Foreign(sym + "_CC", "V", 0);
+    xCcLenhMua = Foreign(sym + "_CC", "I", 0);
+    xNnBan = Foreign(sym + "_NN", "O", 0);
+    xNnMua = Foreign(sym + "_NN", "C", 0);
+    xNnGtBan = Foreign(sym + "_NN", "V", 0);
+    xNnGtMua = Foreign(sym + "_NN", "I", 0);
     yr = Year();
     mo = Month();
     dy = Day();
@@ -46,14 +46,14 @@ if (isBase AND (act == actionExplore OR act == actionScan))
                 s = s + "," + NumToStr(O[i], 1.4, False) + "," + NumToStr(H[i], 1.4, False);
                 s = s + "," + NumToStr(L[i], 1.4, False) + "," + NumToStr(C[i], 1.4, False);
                 s = s + "," + NumToStr(V[i], 1.0, False) + "," + NumToStr(OI[i], 1.0, False);
-                s = s + "," + WriteIf(IsNull(ccO[i]), "", NumToStr(ccO[i], 1.0, False));
-                s = s + "," + WriteIf(IsNull(ccC[i]), "", NumToStr(ccC[i], 1.0, False));
-                s = s + "," + WriteIf(IsNull(ccV[i]), "", NumToStr(ccV[i], 1.0, False));
-                s = s + "," + WriteIf(IsNull(ccI[i]), "", NumToStr(ccI[i], 1.0, False));
-                s = s + "," + WriteIf(IsNull(nnO[i]), "", NumToStr(nnO[i], 1.0, False));
-                s = s + "," + WriteIf(IsNull(nnC[i]), "", NumToStr(nnC[i], 1.0, False));
-                s = s + "," + WriteIf(IsNull(nnV[i]), "", NumToStr(nnV[i], 1.0, False));
-                s = s + "," + WriteIf(IsNull(nnI[i]), "", NumToStr(nnI[i], 1.0, False));
+                s = s + "," + WriteIf(IsNull(xCcBan[i]), "", NumToStr(xCcBan[i], 1.0, False));
+                s = s + "," + WriteIf(IsNull(xCcMua[i]), "", NumToStr(xCcMua[i], 1.0, False));
+                s = s + "," + WriteIf(IsNull(xCcLenhBan[i]), "", NumToStr(xCcLenhBan[i], 1.0, False));
+                s = s + "," + WriteIf(IsNull(xCcLenhMua[i]), "", NumToStr(xCcLenhMua[i], 1.0, False));
+                s = s + "," + WriteIf(IsNull(xNnBan[i]), "", NumToStr(xNnBan[i], 1.0, False));
+                s = s + "," + WriteIf(IsNull(xNnMua[i]), "", NumToStr(xNnMua[i], 1.0, False));
+                s = s + "," + WriteIf(IsNull(xNnGtBan[i]), "", NumToStr(xNnGtBan[i], 1.0, False));
+                s = s + "," + WriteIf(IsNull(xNnGtMua[i]), "", NumToStr(xNnGtMua[i], 1.0, False));
                 fputs(s + "\n", fh);
                 nRows = nRows + 1;
             }
