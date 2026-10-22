@@ -72,3 +72,12 @@ def test_metakit_import(tmp_path):
     assert rep["has_nn_pct"] == 50.0 and rep["nn_gt_volume_pct"] == 0
     p = metakit.save("SSI", data["SSI"], tmp_path / "mk")
     assert len(metakit.load("SSI", tmp_path / "mk")) == 2
+
+
+def test_metakit_fill_fix():
+    from vnflow import metakit
+    df = pd.DataFrame({"nn_kl_ban": [9500, 10000], "nn_kl_mua": [9500, 0], "nn_gt_ban": [0, 118e6], "nn_gt_mua": [111.44e6, 0],
+                       "cc_dat_ban": [274300, 5], "cc_dat_mua": [206100, 5], "cc_lenh_ban": [118, 0], "cc_lenh_mua": [145, 3]})
+    f = metakit.fix_fill(df)
+    assert list(f.nn_kl_ban) == [0, 10000] and list(f.nn_kl_mua) == [9500, 0]   # ABW 12/06/2023: mua ròng 9.500
+    assert list(f.cc_dat_ban) == [274300, 0] and list(f.cc_dat_mua) == [206100, 5]

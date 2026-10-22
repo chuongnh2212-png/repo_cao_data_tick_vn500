@@ -23,6 +23,9 @@ datBan    = Foreign(cc, "O", 0);      // KL dat ban
 datMua    = Foreign(cc, "C", 0);      // KL dat mua
 lenhBan   = Foreign(cc, "V", 0);      // so lenh dat ban
 lenhMua   = Foreign(cc, "I", 0);      // so lenh dat mua
+// cung quy tac dien gia tri nhu _NN: co so lenh = 0 va hai ben bang nhau => ben do = 0
+datBan    = IIf(Nz(lenhBan, -1) == 0 AND datBan == datMua, 0, datBan);
+datMua    = IIf(Nz(lenhMua, -1) == 0 AND datBan == datMua, 0, datMua);
 hasCC     = NOT IsNull(datMua) AND NOT IsNull(datBan) AND (datMua + datBan) > 0;
 duDat     = datMua - datBan;                                   // chenh lech KL dat mua - dat ban
 tyLeDat   = IIf(datBan > 0, datMua / datBan, Null);            // > 1: phe mua dat nhieu hon
@@ -37,6 +40,10 @@ nnBan    = Foreign(nn, "O", 0);
 nnMua    = Foreign(nn, "C", 0);
 gtNNBan  = Foreign(nn, "V", 0);
 gtNNMua  = Foreign(nn, "I", 0);
+// MetaKit: khi mot ben = 0, truong KL cua ben do bi dien bang KL ben kia (VD ABW 12/06/2023:
+// O = C = 9.500 nhung GT ban = 0). Quy tac: GT = 0 => KL ben do = 0.
+nnBan    = IIf(gtNNBan == 0, 0, nnBan);
+nnMua    = IIf(gtNNMua == 0, 0, nnMua);
 hasNN    = NOT IsNull(nnMua) AND NOT IsNull(nnBan);
 nnRong   = nnMua - nnBan;                 // KL mua rong
 gtNNRong = gtNNMua - gtNNBan;             // GT mua rong (don vi theo MetaKit)

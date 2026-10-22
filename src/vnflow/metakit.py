@@ -28,12 +28,31 @@ NUM = ["open", "high", "low", "close", "volume", "shares_out", "cc_dat_ban", "cc
        "cc_lenh_ban", "cc_lenh_mua", "nn_kl_ban", "nn_kl_mua", "nn_gt_ban", "nn_gt_mua"]
 
 
+def fix_fill(df: pd.DataFrame) -> pd.DataFrame:
+    """Sửa quy ước điền giá trị của MetaKit: khi một bên = 0, trường KL bên đó bị điền bằng KL bên kia.
+
+    Xác nhận trên ABW 12–14/06/2023: NN.O = NN.C (9.500) nhưng GT bán = 0, GT mua / KL mua ≈ giá.
+    Quy tắc: GT bán = 0 ⇒ KL bán = 0; GT mua = 0 ⇒ KL mua = 0.
+    Với _CC: số lệnh đặt bên nào = 0 và hai bên bằng nhau ⇒ KL đặt bên đó = 0.
+    Giữ cột *_raw để đối chiếu.
+    """
+    d = df.copy()
+    for c in ["nn_kl_ban", "nn_kl_mua", "cc_dat_ban", "cc_dat_mua"]:
+        d[c + "_raw"] = d[c]
+    d.loc[d["nn_gt_ban"] == 0, "nn_kl_ban"] = 0
+    d.loc[d["nn_gt_mua"] == 0, "nn_kl_mua"] = 0
+    same = d["cc_dat_ban_raw"] == d["cc_dat_mua_raw"]
+    d.loc[same & (d["cc_lenh_ban"] == 0), "cc_dat_ban"] = 0
+    d.loc[same & (d["cc_lenh_mua"] == 0), "cc_dat_mua"] = 0
+    return d
+
+
 def _read_csv(buf) -> pd.DataFrame:
     df = pd.read_csv(buf, dtype={"symbol": str})
     df["date"] = pd.to_datetime(df["date"]).dt.date
     for c in NUM:
         df[c] = pd.to_numeric(df[c], errors="coerce")
-    return df
+    return fix_fill(df)
 
 
 def read_source(src: Path) -> dict[str, pd.DataFrame]:
