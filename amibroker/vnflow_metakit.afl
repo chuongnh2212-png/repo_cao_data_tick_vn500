@@ -1,0 +1,109 @@
+// ============================================================================
+// vnflow_metakit.afl  -  Cung cau dat lenh (_CC) + Khoi ngoai (_NN) tu FireAnt MetaKit
+//                         + Mua/ban CHU DONG tu khop lenh (_OF, du an vnflow) neu co.
+// Dung: keo vao mot khung (pane) moi tren bieu do ma goc (VD: SSI).
+//       Explore: Analysis > chon file nay > Apply to: watchlist > Range: 1 recent bar > Explore.
+//
+// Quy uoc truong du lieu MetaKit (theo "FireAnt MetaKit Professional User Guide"):
+//   Ma goc (SSI):  O H L C = gia (nghin dong), V = KL giao dich, OI = so CP luu hanh
+//   SSI_CC (cung cau):  O = KL dat ban, C = KL dat mua, H = max(dat ban, dat mua),
+//                       L = min(...), V = so lenh dat ban, OI = so lenh dat mua
+//   SSI_NN (khoi ngoai): O = KL ban, C = KL mua, H = max, L = min, V = GT ban, OI = GT mua
+// Tai lieu khong ghi so phien ban; neu MetaKit 6 doi quy uoc, bat "Kiem tra truong" va doi chieu.
+// ============================================================================
+_SECTION_BEGIN("vnflow MetaKit");
+sym  = StrReplace(StrReplace(StrReplace(Name(), "_OF", ""), "_CC", ""), "_NN", "");
+view = ParamList("Hien thi", "Cung cau dat lenh|Khoi ngoai|Mua ban chu dong (vnflow)|Tong hop", 3);
+nSum = Param("So phien cong don", 5, 1, 120, 1);
+dbg  = ParamToggle("Kiem tra truong (hien gia tri tho)", "Tat|Bat", 0);
+
+// ---- 1. Cung cau dat lenh (_CC) ----
+cc        = sym + "_CC";
+datBan    = Foreign(cc, "O", 0);      // KL dat ban
+datMua    = Foreign(cc, "C", 0);      // KL dat mua
+lenhBan   = Foreign(cc, "V", 0);      // so lenh dat ban
+lenhMua   = Foreign(cc, "I", 0);      // so lenh dat mua
+hasCC     = NOT IsNull(datMua) AND NOT IsNull(datBan) AND (datMua + datBan) > 0;
+duDat     = datMua - datBan;                                   // chenh lech KL dat mua - dat ban
+tyLeDat   = IIf(datBan > 0, datMua / datBan, Null);            // > 1: phe mua dat nhieu hon
+klLenhMua = IIf(lenhMua > 0, datMua / lenhMua, Null);          // KL binh quan moi lenh dat mua
+klLenhBan = IIf(lenhBan > 0, datBan / lenhBan, Null);          // KL binh quan moi lenh dat ban
+// klLenhMua >> klLenhBan: lenh mua co quy mo lon hon (goi y to chuc phia mua) - chi la suy luan gian tiep
+khopTrenDat = IIf(datMua > 0, V / datMua, Null);               // ty le KL khop / KL dat mua
+
+// ---- 2. Khoi ngoai (_NN) ----
+nn       = sym + "_NN";
+nnBan    = Foreign(nn, "O", 0);
+nnMua    = Foreign(nn, "C", 0);
+gtNNBan  = Foreign(nn, "V", 0);
+gtNNMua  = Foreign(nn, "I", 0);
+hasNN    = NOT IsNull(nnMua) AND NOT IsNull(nnBan);
+nnRong   = nnMua - nnBan;                 // KL mua rong
+gtNNRong = gtNNMua - gtNNBan;             // GT mua rong (don vi theo MetaKit)
+nnTyTrong = IIf(V > 0, 100 * (nnMua + nnBan) / (2 * V), Null);   // % KL thi truong do NN giao dich
+
+// ---- 3. Mua/ban chu dong tu khop lenh (vnflow, ma _OF) ----
+ofs     = sym + "_OF";
+cdMua   = Foreign(ofs, "1", 0);           // Aux1
+cdBan   = Foreign(ofs, "2", 0);           // Aux2
+lonDelta= Foreign(ofs, "I", 0);           // delta lo lon
+hasOF   = NOT IsNull(cdMua) AND (cdMua + cdBan) > 0;
+delta   = cdMua - cdBan;
+deltaPct= IIf(hasOF, 100 * delta / (cdMua + cdBan), Null);
+
+// ---- 4. Quy doi va cong don ----
+soCP    = OI;                                          // so CP luu hanh (MetaKit)
+vongQuay= IIf(soCP > 0, 100 * V / soCP, Null);         // % vong quay
+duDatN  = Sum(Nz(duDat), nSum);
+nnRongN = Sum(Nz(nnRong), nSum);
+deltaN  = Sum(Nz(delta), nSum);
+
+// ---- Ve ----
+own = 0;
+if (view == "Tong hop") own = styleOwnScale;
+if (view == "Cung cau dat lenh" OR view == "Tong hop")
+{
+    Plot(IIf(hasCC, duDat, Null), "Du dat (mua-ban)", IIf(duDat >= 0, colorGreen, colorRed), styleHistogram | styleThick);
+    Plot(IIf(hasCC, tyLeDat, Null), "Ty le dat mua/ban", colorBlue, styleLine | styleOwnScale);
+}
+if (view == "Khoi ngoai" OR view == "Tong hop")
+    Plot(IIf(hasNN, nnRong, Null), "NN mua rong (KL)", colorOrange, styleHistogram | own);
+if (view == "Mua ban chu dong (vnflow)" OR view == "Tong hop")
+{
+    Plot(IIf(hasOF, delta, Null), "Delta chu dong", IIf(delta >= 0, colorDarkGreen, colorDarkRed), styleHistogram | styleThick | own);
+    Plot(IIf(hasOF, Cum(Nz(delta)), Null), "CVD", colorViolet, styleLine | styleOwnScale);
+}
+
+Title = sym + " | " + view
+      + " | Dat mua " + WriteVal(datMua, 1.0) + " / ban " + WriteVal(datBan, 1.0) + " (x" + WriteVal(tyLeDat, 1.2) + ")"
+      + " | KL/lenh mua " + WriteVal(klLenhMua, 1.0) + " vs ban " + WriteVal(klLenhBan, 1.0)
+      + " | NN rong " + WriteVal(nnRong, 1.0)
+      + " | Delta CD " + WriteVal(delta, 1.0) + " (" + WriteVal(deltaPct, 1.1) + "%)";
+
+if (dbg)
+    Title = Title + "\nTHO: _CC O=" + WriteVal(datBan, 1.0) + " H=" + WriteVal(Foreign(cc, "H", 0), 1.0)
+          + " L=" + WriteVal(Foreign(cc, "L", 0), 1.0) + " C=" + WriteVal(datMua, 1.0)
+          + " V=" + WriteVal(lenhBan, 1.0) + " OI=" + WriteVal(lenhMua, 1.0)
+          + " | _NN O=" + WriteVal(nnBan, 1.0) + " C=" + WriteVal(nnMua, 1.0)
+          + " V=" + WriteVal(gtNNBan, 1.0) + " OI=" + WriteVal(gtNNMua, 1.0)
+          + " | goc OI=" + WriteVal(OI, 1.0);
+
+// ---- Explore: quet ca danh sach ma ----
+Filter = hasCC OR hasNN OR hasOF;
+AddColumn(C, "Gia", 1.2);
+AddColumn(V, "KL", 1.0);
+AddColumn(vongQuay, "Vong quay %", 1.2);
+AddColumn(datMua, "Dat mua", 1.0);
+AddColumn(datBan, "Dat ban", 1.0);
+AddColumn(tyLeDat, "Mua/Ban dat", 1.2, IIf(tyLeDat >= 1, colorGreen, colorRed));
+AddColumn(klLenhMua, "KL/lenh mua", 1.0);
+AddColumn(klLenhBan, "KL/lenh ban", 1.0);
+AddColumn(duDatN, "Du dat " + NumToStr(nSum, 1.0) + "p", 1.0, IIf(duDatN >= 0, colorGreen, colorRed));
+AddColumn(nnRong, "NN rong", 1.0, IIf(nnRong >= 0, colorGreen, colorRed));
+AddColumn(nnRongN, "NN rong " + NumToStr(nSum, 1.0) + "p", 1.0, IIf(nnRongN >= 0, colorGreen, colorRed));
+AddColumn(gtNNRong, "GT NN rong", 1.0);
+AddColumn(delta, "Delta CD", 1.0, IIf(delta >= 0, colorGreen, colorRed));
+AddColumn(deltaPct, "Delta CD %", 1.1);
+AddColumn(deltaN, "Delta " + NumToStr(nSum, 1.0) + "p", 1.0, IIf(deltaN >= 0, colorGreen, colorRed));
+AddColumn(lonDelta, "Delta lo lon", 1.0);
+_SECTION_END();

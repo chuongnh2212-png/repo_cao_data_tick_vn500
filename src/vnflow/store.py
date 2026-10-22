@@ -14,8 +14,14 @@ def _path(base: Path, d: date) -> Path:
 
 
 def write_day(df: pd.DataFrame, base: Path, d: date) -> Path:
+    """Ghi file ngày. Nếu file đã có: thay dữ liệu của các mã vừa thu thập, giữ nguyên mã khác
+    (để chạy tay vài mã không xóa mất dữ liệu 500 mã)."""
     p = _path(base, d)
     p.parent.mkdir(parents=True, exist_ok=True)
+    if p.exists() and len(df) and "symbol" in df:
+        old = pd.read_parquet(p)
+        old = old[~old["symbol"].isin(set(df["symbol"]))]
+        df = pd.concat([old, df], ignore_index=True) if len(old) else df
     df.to_parquet(p, index=False, compression="zstd")
     return p
 

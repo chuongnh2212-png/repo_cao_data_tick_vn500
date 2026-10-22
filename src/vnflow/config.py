@@ -6,7 +6,10 @@ from pathlib import Path
 from zoneinfo import ZoneInfo
 
 ROOT = Path(__file__).resolve().parents[2]
-DATA = ROOT / "data"
+# VNFLOW_DATA: đổi thư mục dữ liệu (chạy tay trên máy cá nhân dùng data_local để không đụng dữ liệu đồng bộ từ GitHub)
+DATA = Path(os.environ.get("VNFLOW_DATA", ROOT / "data"))
+if not DATA.is_absolute():
+    DATA = ROOT / DATA
 RAW_DIR = DATA / "raw"          # khớp lệnh từng lệnh (mặc định KHÔNG commit, xem .gitignore)
 LEVELS_DIR = DATA / "levels"    # tổng hợp theo bước giá / mã / ngày (commit)
 DAILY_DIR = DATA / "daily"      # tóm tắt ngày từ khớp lệnh (commit)

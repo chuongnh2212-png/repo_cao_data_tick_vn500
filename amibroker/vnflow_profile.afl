@@ -1,0 +1,146 @@
+// ============================================================================
+// vnflow_profile.afl - Volume Profile tu KHOP LENH THAT (mua / ban chu dong / ATO-ATC)
+// Dung: keo tha vao khung GIA cua ma goc (VD: SSI). Yeu cau AmiBroker 6.10+ (ham Matrix).
+// Du lieu: <thu muc>\levels\<MA>.csv do amibroker\run_vnflow.bat tao ra.
+// Xanh = mua chu dong, Do = ban chu dong, Xam = khop dinh ky ATO/ATC.
+// Duong xanh dam = POC, net dut = bien Value Area. Thanh dam = trong Value Area.
+// ============================================================================
+_SECTION_BEGIN("vnflow Volume Profile");
+folder   = ParamStr("Thu muc levels", "C:\\vnflow\\amibroker_out\\levels\\");
+rangeOpt = ParamList("Khoang ngay", "Vung dang xem|N phien gan nhat|Toan bo", 0);
+nDays    = Param("N phien gan nhat", 20, 1, 1000, 1);
+widthPct = Param("Do rong profile (% khung)", 30, 5, 80, 1);
+vaPct    = Param("Value Area (%)", 70, 50, 95, 1);
+
+sym = StrReplace(Name(), "_OF", "");
+fvb = Max(Status("firstvisiblebar"), 0);
+lvb = Min(Status("lastvisiblebar"), BarCount - 1);
+dn  = DateNum();
+d1 = 0;
+d2 = 99999999;
+if (rangeOpt == "Vung dang xem") { d1 = dn[fvb]; d2 = dn[lvb]; }
+if (rangeOpt == "N phien gan nhat") { d1 = dn[Max(BarCount - nDays, 0)]; d2 = dn[BarCount - 1]; }
+
+// ---- doc file, cong don theo muc gia ----
+keys = ",";
+n = 0;
+nDaysRead = 0;
+lastD = -1;
+fh = fopen(folder + sym + ".csv", "r");
+if (fh)
+{
+    hdr = fgets(fh);
+    while (! feof(fh))
+    {
+        ln = fgets(fh);
+        if (StrLen(ln) > 10)
+        {
+            d = StrToNum(StrExtract(ln, 0));
+            if (d >= d1 AND d <= d2)
+            {
+                if (d != lastD) { nDaysRead++; lastD = d; }
+                k = NumToStr(round(StrToNum(StrExtract(ln, 2)) * 1000), 1.0, False);
+                if (StrFind(keys, "," + k + ",") == 0)
+                {
+                    keys = keys + k + ",";
+                    n++;
+                    VarSet("vb" + k, 0);
+                    VarSet("vs" + k, 0);
+                    VarSet("vu" + k, 0);
+                }
+                VarSet("vb" + k, VarGet("vb" + k) + StrToNum(StrExtract(ln, 4)));
+                VarSet("vs" + k, VarGet("vs" + k) + StrToNum(StrExtract(ln, 5)));
+                VarSet("vu" + k, VarGet("vu" + k) + StrToNum(StrExtract(ln, 6)));
+            }
+        }
+    }
+    fclose(fh);
+}
+
+GfxSetBkMode(1);
+if (n > 0)
+{
+    // ---- bang [gia, mua, ban, dinh ky], sap xep theo gia ----
+    m = Matrix(n, 4);
+    for (i = 0; i < n; i++)
+    {
+        k = StrExtract(keys, i + 1);
+        m[i][0] = StrToNum(k) / 1000;
+        m[i][1] = VarGet("vb" + k);
+        m[i][2] = VarGet("vs" + k);
+        m[i][3] = VarGet("vu" + k);
+    }
+    m = MxSortRows(m, True, 0);
+
+    // ---- POC va Value Area ----
+    tot = 0; maxv = 0; pocI = 0; tb = 0; ts = 0;
+    for (i = 0; i < n; i++)
+    {
+        v = m[i][1] + m[i][2] + m[i][3];
+        tot = tot + v;
+        tb = tb + m[i][1];
+        ts = ts + m[i][2];
+        if (v > maxv) { maxv = v; pocI = i; }
+    }
+    lo = pocI; hi = pocI; acc = maxv;
+    while (acc < tot * vaPct / 100 AND (lo > 0 OR hi < n - 1))
+    {
+        a = -1; b = -1;
+        if (lo > 0) a = m[lo - 1][1] + m[lo - 1][2] + m[lo - 1][3];
+        if (hi < n - 1) b = m[hi + 1][1] + m[hi + 1][2] + m[hi + 1][3];
+        if (a >= b) { lo = lo - 1; acc = acc + a; }
+        else { hi = hi + 1; acc = acc + b; }
+    }
+
+    // ---- buoc gia nho nhat de tinh do day thanh ----
+    tick = 0;
+    for (i = 1; i < n; i++)
+    {
+        dp = m[i][0] - m[i - 1][0];
+        if (dp > 0 AND (tick == 0 OR dp < tick)) tick = dp;
+    }
+    if (tick == 0) tick = m[0][0] * 0.002;
+
+    // ---- ve (toa do: x = chi so nen, y = gia) ----
+    wmax = (lvb - fvb + 1) * widthPct / 100;
+    x0 = lvb - wmax;
+    GfxSetCoordsMode(1);
+    for (i = 0; i < n; i++)
+    {
+        p  = m[i][0];
+        y1 = p + tick * 0.42;
+        y2 = p - tick * 0.42;
+        lb = wmax * m[i][1] / maxv;
+        ls = wmax * m[i][2] / maxv;
+        lu = wmax * m[i][3] / maxv;
+        if (i >= lo AND i <= hi)
+        { cb = ColorRGB(40, 150, 80);  cs = ColorRGB(200, 70, 65);  cu = ColorRGB(140, 140, 140); }
+        else
+        { cb = ColorRGB(150, 210, 165); cs = ColorRGB(235, 165, 160); cu = ColorRGB(200, 200, 200); }
+        GfxSelectPen(cb); GfxSelectSolidBrush(cb); GfxRectangle(x0, y1, x0 + lb, y2);
+        GfxSelectPen(cs); GfxSelectSolidBrush(cs); GfxRectangle(x0 + lb, y1, x0 + lb + ls, y2);
+        if (lu > 0) { GfxSelectPen(cu); GfxSelectSolidBrush(cu); GfxRectangle(x0 + lb + ls, y1, x0 + lb + ls + lu, y2); }
+    }
+    GfxSelectPen(colorBlue, 2);
+    GfxMoveTo(x0, m[pocI][0]); GfxLineTo(lvb, m[pocI][0]);
+    GfxSelectPen(colorBlue, 1, 2);
+    GfxMoveTo(x0, m[hi][0] + tick / 2); GfxLineTo(lvb, m[hi][0] + tick / 2);
+    GfxMoveTo(x0, m[lo][0] - tick / 2); GfxLineTo(lvb, m[lo][0] - tick / 2);
+
+    // ---- chu thich ----
+    GfxSetCoordsMode(0);
+    GfxSelectFont("Tahoma", 9, 700);
+    GfxSetTextColor(colorBlue);
+    GfxTextOut("vnflow " + sym + " | " + NumToStr(nDaysRead, 1.0) + " phien"
+        + " | POC " + NumToStr(m[pocI][0], 1.2)
+        + " | VA " + NumToStr(m[lo][0], 1.2) + " - " + NumToStr(m[hi][0], 1.2)
+        + " | Mua CD " + NumToStr(tb, 1.0) + " | Ban CD " + NumToStr(ts, 1.0)
+        + " | Delta " + NumToStr(tb - ts, 1.0), 10, 28);
+}
+else
+{
+    GfxSetCoordsMode(0);
+    GfxSetTextColor(colorRed);
+    GfxTextOut("vnflow: khong co du lieu " + folder + sym + ".csv trong khoang ngay nay", 10, 28);
+}
+_SECTION_END();

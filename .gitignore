@@ -6,3 +6,5 @@ data/raw/
 reports/*/
 !reports/.gitkeep
 .DS_Store
+data_local/
+amibroker_out/
