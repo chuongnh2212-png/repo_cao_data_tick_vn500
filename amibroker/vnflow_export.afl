@@ -1,0 +1,68 @@
+// ============================================================================
+// vnflow_export.afl - Xuat lich su MetaKit ra CSV (moi ma mot file) de nap vao du an vnflow.
+//   Moi dong = 1 phien: gia (ma goc) + cung cau dat lenh (_CC) + khoi ngoai (_NN).
+//
+// Cach chay:
+//   1. Analysis (Ctrl+Alt+... hoac File > New > Analysis) > Formula: chon file nay.
+//   2. Apply to: Filter > watchlist chi chua MA GOC (VD: VN500). Ma co dau "_" se tu bo qua.
+//   3. Range: From-To dates (VD: 01/01/2015 -> hom nay). Periodicity: Daily.
+//   4. Bam EXPLORE. Bang ket qua hien so dong da ghi cho tung ma.
+//   5. Nen la file trong thu muc xuat (mac dinh C:\vnflow\metakit_export\) thanh .zip
+//      roi gui cho Claude, hoac chay: python -m vnflow.metakit C:\vnflow\metakit_export
+//
+// Quy uoc truong MetaKit (FireAnt MetaKit Professional User Guide):
+//   ma goc:  O H L C (nghin dong), V = KL giao dich, OI = so CP luu hanh
+//   _CC:     O = KL dat ban, C = KL dat mua, V = so lenh dat ban, OI = so lenh dat mua
+//   _NN:     O = KL ban, C = KL mua, V = GT ban, OI = GT mua
+// ============================================================================
+SetBarsRequired(sbrAll, sbrAll);
+outDir = ParamStr("Thu muc xuat", "C:\\vnflow\\metakit_export\\");
+
+function F0(x) { if (IsNull(x)) return ""; return NumToStr(x, 1.0, False); }
+function F4(x) { if (IsNull(x)) return ""; return NumToStr(x, 1.4, False); }
+
+sym = Name();
+act = Status("action");
+nRows = 0;
+fileOk = False;
+
+if ((act == actionExplore OR act == actionScan) AND StrFind(sym, "_") == 0)
+{
+    cc = sym + "_CC";
+    nn = sym + "_NN";
+    ccO = Foreign(cc, "O", 0);  ccC = Foreign(cc, "C", 0);
+    ccV = Foreign(cc, "V", 0);  ccI = Foreign(cc, "I", 0);
+    nnO = Foreign(nn, "O", 0);  nnC = Foreign(nn, "C", 0);
+    nnV = Foreign(nn, "V", 0);  nnI = Foreign(nn, "I", 0);
+    yr = Year(); mo = Month(); dy = Day();
+    inRange = Status("barinrange");
+
+    fmkdir(outDir);
+    fh = fopen(outDir + sym + ".csv", "w");
+    if (fh)
+    {
+        fileOk = True;
+        fputs("symbol,date,open,high,low,close,volume,shares_out,"
+            + "cc_dat_ban,cc_dat_mua,cc_lenh_ban,cc_lenh_mua,"
+            + "nn_kl_ban,nn_kl_mua,nn_gt_ban,nn_gt_mua\n", fh);
+        for (i = 0; i < BarCount; i++)
+        {
+            if (inRange[i])
+            {
+                fputs(sym + "," + StrFormat("%04.0f-%02.0f-%02.0f", yr[i], mo[i], dy[i])
+                    + "," + F4(O[i]) + "," + F4(H[i]) + "," + F4(L[i]) + "," + F4(C[i])
+                    + "," + F0(V[i]) + "," + F0(OI[i])
+                    + "," + F0(ccO[i]) + "," + F0(ccC[i]) + "," + F0(ccV[i]) + "," + F0(ccI[i])
+                    + "," + F0(nnO[i]) + "," + F0(nnC[i]) + "," + F4(nnV[i]) + "," + F4(nnI[i])
+                    + "\n", fh);
+                nRows++;
+            }
+        }
+        fclose(fh);
+    }
+}
+
+Buy = Sell = 0;
+Filter = Status("lastbarinrange") AND StrFind(sym, "_") == 0;
+AddColumn(nRows, "So dong da ghi", 1.0);
+AddTextColumn(WriteIf(fileOk, outDir + sym + ".csv", "LOI: khong ghi duoc file"), "File");

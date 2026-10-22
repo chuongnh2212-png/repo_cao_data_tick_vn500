@@ -40,6 +40,7 @@ bash scripts/daily.sh                         # thu thập + commit + push (dùn
 | `quality/YYYY-MM-DD.json` | tóm tắt lần chạy + lỗi kiểm tra | Có |
 | `raw/…` | khớp lệnh thô (`--keep-raw`) | Không (quá lớn) |
 | `ohlcv/` | nến ngày người dùng cung cấp (Excel/CSV, giá nghìn đồng) | Có |
+| `metakit/<MÃ>.parquet` | lịch sử FireAnt MetaKit từ 2015: giá, KL, CP lưu hành, đặt mua/bán (`cc_*`), khối ngoại (`nn_*`); nạp bằng `python -m vnflow.metakit`, đọc bằng `metakit.load(MÃ)` | Có |
 
 ## Quy tắc phân tích bắt buộc
 1. **Kiểm tra dữ liệu trước**: `quality.check_trades` cho khớp lệnh; `quality.check_ohlcv` cho nến ngày

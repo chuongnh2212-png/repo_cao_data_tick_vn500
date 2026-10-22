@@ -43,6 +43,18 @@ nếu MetaKit 6 khác, bật tham số **Kiểm tra trường** trong `vnflow_me
 Explore toàn bộ VN500: Analysis → chọn `vnflow_metakit.afl` → Apply to: watchlist VN500 → Range: 1 recent bar → **Explore**.
 Sắp theo cột "Delta 5p", "NN rong 5p", "Du dat 5p" để tìm mã có lực mua áp đảo nhiều phiên.
 
+## Xuất lịch sử MetaKit (từ 2015) cho Claude phân tích
+1. Analysis → Formula: `vnflow_export.afl` → Apply to: watchlist mã gốc (VN500) → Range: From-To `01/01/2015` → hôm nay → **Explore**.
+2. Mỗi mã thành một file `C:\vnflow\metakit_export\<MÃ>.csv` (giá, KL, số CP lưu hành, đặt mua/bán, khối ngoại).
+3. Nạp vào dự án và đẩy lên GitHub:
+   ```bat
+   cd C:\vnflow
+   python -m vnflow.metakit C:\vnflow\metakit_export
+   git add data/metakit && git commit -m "data: lịch sử MetaKit" && git push
+   ```
+   Lệnh nạp in báo cáo kiểm tra quy ước trường; nếu có "CẢNH BÁO" thì gửi lại cho Claude.
+   Hoặc nén thư mục `metakit_export` thành .zip và gửi thẳng cho Claude.
+
 ## Lưu ý
 - Các AFL viết cho AmiBroker **6.10+** và chưa được chạy thử trên máy thật: nếu báo lỗi, gửi lại dòng lỗi.
 - Đường dẫn mặc định `C:\vnflow\amibroker_out\levels\` (đổi trong Parameters của `vnflow_profile.afl`).

@@ -57,3 +57,18 @@ def test_write_day_merges(tmp_path):
     store.write_day(pd.DataFrame({"symbol": ["B"], "x": [9]}), tmp_path, d)
     out = store.read_range(tmp_path).sort_values("symbol")
     assert list(out.x) == [1, 9]
+
+
+def test_metakit_import(tmp_path):
+    from vnflow import metakit
+    src = tmp_path / "exp"; src.mkdir()
+    (src / "SSI.csv").write_text(
+        "symbol,date,open,high,low,close,volume,shares_out,cc_dat_ban,cc_dat_mua,cc_lenh_ban,cc_lenh_mua,nn_kl_ban,nn_kl_mua,nn_gt_ban,nn_gt_mua\n"
+        "SSI,2015-01-05,10.1000,10.3000,10.0000,10.2000,1000000,350000000,1500000,1800000,900,1100,50000,80000,510.0000,816.0000\n"
+        "SSI,2015-01-06,10.2000,10.4000,10.1000,10.3000,900000,350000000,,,,,,,,\n", encoding="utf-8")
+    data = metakit.read_source(src)
+    assert set(data) == {"SSI"} and len(data["SSI"]) == 2
+    rep = metakit.sanity(data["SSI"])
+    assert rep["has_nn_pct"] == 50.0 and rep["nn_gt_volume_pct"] == 0
+    p = metakit.save("SSI", data["SSI"], tmp_path / "mk")
+    assert len(metakit.load("SSI", tmp_path / "mk")) == 2
