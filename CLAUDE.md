@@ -51,7 +51,8 @@ bash scripts/daily.sh                         # thu thập + commit + push (dùn
 3. Phiên trần/sàn trắng: KL thấp vì một bên biến mất, **không** đọc là cạn cung/cầu.
 4. Profile từ nến ngày là **ước lượng**; ưu tiên `data/levels` khi đủ phiên.
 5. Nhãn VSA trong `analysis.vsa` chỉ là gợi ý: phải đọc bối cảnh và phiên sau xác nhận/phủ nhận.
-6. Khi nói về "nhà đầu tư lớn", nói rõ đây là suy luận gián tiếp (delta, lô lớn, hấp thụ), không phải dữ liệu định danh.
+6. Dữ liệu MetaKit: đọc `data/metakit/README.md` trước. KL khối ngoại trước 2022 lệch đơn vị → dùng GT hoặc dấu ròng; phiên |biến động| >15,5% phải xử lý trước khi phân tích.
+7. Khi nói về "nhà đầu tư lớn", nói rõ đây là suy luận gián tiếp (delta, lô lớn, hấp thụ), không phải dữ liệu định danh.
 
 Quy trình phân tích đầy đủ nằm trong skill `phan-tich-cung-cau` (`.claude/skills/`).
 
