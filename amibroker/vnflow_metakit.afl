@@ -47,7 +47,13 @@ ofs     = sym + "_OF";
 cdMua   = Foreign(ofs, "1", 0);           // Aux1
 cdBan   = Foreign(ofs, "2", 0);           // Aux2
 lonDelta= Foreign(ofs, "I", 0);           // delta lo lon
-hasOF   = NOT IsNull(cdMua) AND (cdMua + cdBan) > 0;
+// Chi tin du lieu _OF tu ngay du an bat dau thu thap (22/10/2026). Neu chua co ma <MA>_OF,
+// AmiBroker co the tra ve truong Aux cua chinh ma goc -> so lieu "Delta CD" truoc ngay nay la SAI.
+ofStart = 1261022;   // DateNum cua 2026-10-22
+hasOF   = DateNum() >= ofStart AND NOT IsNull(cdMua) AND (cdMua + cdBan) > 0;
+cdMua   = IIf(hasOF, cdMua, Null);
+cdBan   = IIf(hasOF, cdBan, Null);
+lonDelta= IIf(hasOF, lonDelta, Null);
 delta   = cdMua - cdBan;
 deltaPct= IIf(hasOF, 100 * delta / (cdMua + cdBan), Null);
 
