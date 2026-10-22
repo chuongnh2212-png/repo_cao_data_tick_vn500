@@ -112,4 +112,16 @@ AddColumn(delta, "Delta CD", 1.0, IIf(delta >= 0, colorGreen, colorRed));
 AddColumn(deltaPct, "Delta CD %", 1.1);
 AddColumn(deltaN, "Delta " + NumToStr(nSum, 1.0) + "p", 1.0, IIf(deltaN >= 0, colorGreen, colorRed));
 AddColumn(lonDelta, "Delta lo lon", 1.0);
+if (dbg)
+{
+    AddColumn(Foreign(cc, "O", 0), "CC.O", 1.0);  AddColumn(Foreign(cc, "H", 0), "CC.H", 1.0);
+    AddColumn(Foreign(cc, "L", 0), "CC.L", 1.0);  AddColumn(Foreign(cc, "C", 0), "CC.C", 1.0);
+    AddColumn(Foreign(cc, "V", 0), "CC.V", 1.0);  AddColumn(Foreign(cc, "I", 0), "CC.OI", 1.0);
+    AddColumn(Foreign(cc, "1", 0), "CC.Aux1", 1.0); AddColumn(Foreign(cc, "2", 0), "CC.Aux2", 1.0);
+    AddColumn(Foreign(nn, "O", 0), "NN.O", 1.0);  AddColumn(Foreign(nn, "H", 0), "NN.H", 1.0);
+    AddColumn(Foreign(nn, "L", 0), "NN.L", 1.0);  AddColumn(Foreign(nn, "C", 0), "NN.C", 1.0);
+    AddColumn(Foreign(nn, "V", 0), "NN.V", 1.0);  AddColumn(Foreign(nn, "I", 0), "NN.OI", 1.0);
+    AddColumn(Foreign(nn, "1", 0), "NN.Aux1", 1.0); AddColumn(Foreign(nn, "2", 0), "NN.Aux2", 1.0);
+    AddColumn(OI, "Goc.OI", 1.0); AddColumn(Aux1, "Goc.Aux1", 1.0); AddColumn(Aux2, "Goc.Aux2", 1.0);
+}
 _SECTION_END();
