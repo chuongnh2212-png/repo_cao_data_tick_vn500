@@ -1,0 +1,1946 @@
+{
+ "summary": {
+  "date": "2026-11-17",
+  "requested": 500,
+  "collected": 422,
+  "skipped": [
+   "SSH",
+   "DNH",
+   "IDP",
+   "CRV",
+   "LGC",
+   "RGG",
+   "VCF",
+   "TDM",
+   "DNW",
+   "PRE",
+   "TET",
+   "TBD",
+   "DNP",
+   "HTM",
+   "VUA",
+   "PHS",
+   "PTI",
+   "TTD",
+   "BCG",
+   "ITA",
+   "VFC",
+   "HLB",
+   "BGE",
+   "BRR",
+   "SZG",
+   "DCF",
+   "TSJ",
+   "HPW",
+   "CMM",
+   "TLP",
+   "SWC",
+   "ND2",
+   "VAV",
+   "DSP",
+   "LDW",
+   "SBM",
+   "ASG",
+   "AGX",
+   "TMG",
+   "SRC",
+   "NCG",
+   "BMJ",
+   "SEB",
+   "HHC",
+   "TIX",
+   "MVB",
+   "HPI",
+   "QNP",
+   "SID",
+   "HAC",
+   "GMA",
+   "SLD",
+   "HAN",
+   "BVL",
+   "DSD",
+   "CVT",
+   "NDC",
+   "TTE",
+   "KHW",
+   "POM",
+   "GTD",
+   "PCT",
+   "GVT",
+   "FDC",
+   "WCS",
+   "NFC",
+   "VLW",
+   "VE4",
+   "MIE",
+   "SII",
+   "BSQ",
+   "SGC",
+   "SJ1",
+   "AIC",
+   "VNC",
+   "NVT",
+   "UPS",
+   "HNI"
+  ],
+  "fetch_errors": [],
+  "issues": 265
+ },
+ "issues": [
+  {
+   "symbol": "AAA",
+   "date": "2026-11-17",
+   "check": "acc_vol",
+   "level": "error",
+   "detail": "nguồn thiếu 7,700 cp (2.22%) ở 1 chỗ; lũy kế 346,300 vs cộng lệnh 338,600"
+  },
+  {
+   "symbol": "ABI",
+   "date": "2026-11-17",
+   "check": "incomplete_day",
+   "level": "warn",
+   "detail": "lệnh cuối lúc 14:29:13 < 14:45:00 → có thể lấy giữa phiên"
+  },
+  {
+   "symbol": "ABT",
+   "date": "2026-11-17",
+   "check": "incomplete_day",
+   "level": "warn",
+   "detail": "lệnh cuối lúc 14:23:10 < 14:45:00 → có thể lấy giữa phiên"
+  },
+  {
+   "symbol": "ABW",
+   "date": "2026-11-17",
+   "check": "acc_vol",
+   "level": "error",
+   "detail": "nguồn thiếu 500 cp (0.97%) ở 1 chỗ; lũy kế 51,300 vs cộng lệnh 50,800"
+  },
+  {
+   "symbol": "ABW",
+   "date": "2026-11-17",
+   "check": "incomplete_day",
+   "level": "warn",
+   "detail": "lệnh cuối lúc 14:42:45 < 14:45:00 → có thể lấy giữa phiên"
+  },
+  {
+   "symbol": "ACB",
+   "date": "2026-11-17",
+   "check": "acc_vol",
+   "level": "warn",
+   "detail": "nguồn thiếu 300 cp (0.01%) ở 2 chỗ; lũy kế 4,685,400 vs cộng lệnh 4,685,100"
+  },
+  {
+   "symbol": "ACG",
+   "date": "2026-11-17",
+   "check": "incomplete_day",
+   "level": "warn",
+   "detail": "lệnh cuối lúc 13:15:26 < 14:45:00 → có thể lấy giữa phiên"
+  },
+  {
+   "symbol": "ACV",
+   "date": "2026-11-17",
+   "check": "acc_vol",
+   "level": "error",
+   "detail": "nguồn thiếu 7,800 cp (1.01%) ở 4 chỗ; lũy kế 771,100 vs cộng lệnh 763,300"
+  },
+  {
+   "symbol": "AGP",
+   "date": "2026-11-17",
+   "check": "incomplete_day",
+   "level": "warn",
+   "detail": "lệnh cuối lúc 14:29:57 < 14:45:00 → có thể lấy giữa phiên"
+  },
+  {
+   "symbol": "ANV",
+   "date": "2026-11-17",
+   "check": "acc_vol",
+   "level": "warn",
+   "detail": "nguồn thiếu 100 cp (0.02%) ở 1 chỗ; lũy kế 411,000 vs cộng lệnh 410,900"
+  },
+  {
+   "symbol": "AVC",
+   "date": "2026-11-17",
+   "check": "incomplete_day",
+   "level": "warn",
+   "detail": "lệnh cuối lúc 10:15:52 < 14:45:00 → có thể lấy giữa phiên"
+  },
+  {
+   "symbol": "BAB",
+   "date": "2026-11-17",
+   "check": "incomplete_day",
+   "level": "warn",
+   "detail": "lệnh cuối lúc 14:00:39 < 14:45:00 → có thể lấy giữa phiên"
+  },
+  {
+   "symbol": "BCA",
+   "date": "2026-11-17",
+   "check": "incomplete_day",
+   "level": "warn",
+   "detail": "lệnh cuối lúc 13:48:46 < 14:45:00 → có thể lấy giữa phiên"
+  },
+  {
+   "symbol": "BCF",
+   "date": "2026-11-17",
+   "check": "incomplete_day",
+   "level": "warn",
+   "detail": "lệnh cuối lúc 09:57:44 < 14:45:00 → có thể lấy giữa phiên"
+  },
+  {
+   "symbol": "BFC",
+   "date": "2026-11-17",
+   "check": "incomplete_day",
+   "level": "warn",
+   "detail": "lệnh cuối lúc 14:26:52 < 14:45:00 → có thể lấy giữa phiên"
+  },
+  {
+   "symbol": "BHA",
+   "date": "2026-11-17",
+   "check": "incomplete_day",
+   "level": "warn",
+   "detail": "lệnh cuối lúc 10:12:24 < 14:45:00 → có thể lấy giữa phiên"
+  },
+  {
+   "symbol": "BID",
+   "date": "2026-11-17",
+   "check": "acc_vol",
+   "level": "warn",
+   "detail": "nguồn thiếu 900 cp (0.02%) ở 2 chỗ; lũy kế 5,240,400 vs cộng lệnh 5,239,500"
+  },
+  {
+   "symbol": "BMS",
+   "date": "2026-11-17",
+   "check": "incomplete_day",
+   "level": "warn",
+   "detail": "lệnh cuối lúc 14:15:04 < 14:45:00 → có thể lấy giữa phiên"
+  },
+  {
+   "symbol": "BSA",
+   "date": "2026-11-17",
+   "check": "incomplete_day",
+   "level": "warn",
+   "detail": "lệnh cuối lúc 11:29:46 < 14:45:00 → có thể lấy giữa phiên"
+  },
+  {
+   "symbol": "BSR",
+   "date": "2026-11-17",
+   "check": "acc_vol",
+   "level": "warn",
+   "detail": "nguồn thiếu 18,600 cp (0.17%) ở 3 chỗ; lũy kế 11,105,200 vs cộng lệnh 11,086,600"
+  },
+  {
+   "symbol": "BVB",
+   "date": "2026-11-17",
+   "check": "acc_vol",
+   "level": "warn",
+   "detail": "nguồn thiếu 2,000 cp (0.49%) ở 1 chỗ; lũy kế 408,000 vs cộng lệnh 406,000"
+  },
+  {
+   "symbol": "BVS",
+   "date": "2026-11-17",
+   "check": "acc_vol",
+   "level": "warn",
+   "detail": "nguồn thiếu 1,200 cp (0.20%) ở 2 chỗ; lũy kế 586,000 vs cộng lệnh 584,800"
+  },
+  {
+   "symbol": "BWS",
+   "date": "2026-11-17",
+   "check": "incomplete_day",
+   "level": "warn",
+   "detail": "lệnh cuối lúc 14:16:50 < 14:45:00 → có thể lấy giữa phiên"
+  },
+  {
+   "symbol": "C4G",
+   "date": "2026-11-17",
+   "check": "acc_vol",
+   "level": "warn",
+   "detail": "nguồn thiếu 200 cp (0.22%) ở 1 chỗ; lũy kế 92,100 vs cộng lệnh 91,900"
+  },
+  {
+   "symbol": "C69",
+   "date": "2026-11-17",
+   "check": "acc_vol",
+   "level": "error",
+   "detail": "nguồn thiếu 1,300 cp (1.17%) ở 1 chỗ; lũy kế 111,000 vs cộng lệnh 109,700"
+  },
+  {
+   "symbol": "CC1",
+   "date": "2026-11-17",
+   "check": "acc_vol",
+   "level": "error",
+   "detail": "nguồn thiếu 100 cp (0.55%) ở 1 chỗ; lũy kế 18,300 vs cộng lệnh 18,200"
+  },
+  {
+   "symbol": "CDN",
+   "date": "2026-11-17",
+   "check": "incomplete_day",
+   "level": "warn",
+   "detail": "lệnh cuối lúc 13:50:05 < 14:45:00 → có thể lấy giữa phiên"
+  },
+  {
+   "symbol": "CEO",
+   "date": "2026-11-17",
+   "check": "acc_vol",
+   "level": "warn",
+   "detail": "nguồn thiếu 6,900 cp (0.10%) ở 4 chỗ; lũy kế 7,214,700 vs cộng lệnh 7,207,800"
+  },
+  {
+   "symbol": "CII",
+   "date": "2026-11-17",
+   "check": "acc_vol",
+   "level": "warn",
+   "detail": "nguồn thiếu 1,200 cp (0.02%) ở 1 chỗ; lũy kế 6,961,400 vs cộng lệnh 6,960,200"
+  },
+  {
+   "symbol": "CLC",
+   "date": "2026-11-17",
+   "check": "incomplete_day",
+   "level": "warn",
+   "detail": "lệnh cuối lúc 10:10:50 < 14:45:00 → có thể lấy giữa phiên"
+  },
+  {
+   "symbol": "CLL",
+   "date": "2026-11-17",
+   "check": "incomplete_day",
+   "level": "warn",
+   "detail": "lệnh cuối lúc 13:51:53 < 14:45:00 → có thể lấy giữa phiên"
+  },
+  {
+   "symbol": "CLM",
+   "date": "2026-11-17",
+   "check": "incomplete_day",
+   "level": "warn",
+   "detail": "lệnh cuối lúc 14:29:13 < 14:45:00 → có thể lấy giữa phiên"
+  },
+  {
+   "symbol": "CLX",
+   "date": "2026-11-17",
+   "check": "incomplete_day",
+   "level": "warn",
+   "detail": "lệnh cuối lúc 14:32:53 < 14:45:00 → có thể lấy giữa phiên"
+  },
+  {
+   "symbol": "CMF",
+   "date": "2026-11-17",
+   "check": "incomplete_day",
+   "level": "warn",
+   "detail": "lệnh cuối lúc 09:19:03 < 14:45:00 → có thể lấy giữa phiên"
+  },
+  {
+   "symbol": "CMG",
+   "date": "2026-11-17",
+   "check": "acc_vol",
+   "level": "warn",
+   "detail": "nguồn thiếu 100 cp (0.05%) ở 1 chỗ; lũy kế 220,100 vs cộng lệnh 220,000"
+  },
+  {
+   "symbol": "CNG",
+   "date": "2026-11-17",
+   "check": "incomplete_day",
+   "level": "warn",
+   "detail": "lệnh cuối lúc 13:08:21 < 14:45:00 → có thể lấy giữa phiên"
+  },
+  {
+   "symbol": "CQN",
+   "date": "2026-11-17",
+   "check": "incomplete_day",
+   "level": "warn",
+   "detail": "lệnh cuối lúc 13:20:49 < 14:45:00 → có thể lấy giữa phiên"
+  },
+  {
+   "symbol": "CTD",
+   "date": "2026-11-17",
+   "check": "acc_vol",
+   "level": "warn",
+   "detail": "nguồn thiếu 500 cp (0.07%) ở 1 chỗ; lũy kế 714,300 vs cộng lệnh 713,800"
+  },
+  {
+   "symbol": "CTF",
+   "date": "2026-11-17",
+   "check": "acc_vol",
+   "level": "error",
+   "detail": "nguồn thiếu 4,800 cp (2.58%) ở 1 chỗ; lũy kế 186,000 vs cộng lệnh 181,200"
+  },
+  {
+   "symbol": "CTG",
+   "date": "2026-11-17",
+   "check": "acc_vol",
+   "level": "warn",
+   "detail": "nguồn thiếu 2,900 cp (0.07%) ở 2 chỗ; lũy kế 4,241,800 vs cộng lệnh 4,238,900"
+  },
+  {
+   "symbol": "CTR",
+   "date": "2026-11-17",
+   "check": "acc_vol",
+   "level": "warn",
+   "detail": "nguồn thiếu 300 cp (0.07%) ở 1 chỗ; lũy kế 428,300 vs cộng lệnh 428,000"
+  },
+  {
+   "symbol": "CTS",
+   "date": "2026-11-17",
+   "check": "acc_vol",
+   "level": "warn",
+   "detail": "nguồn thiếu 1,400 cp (0.08%) ở 1 chỗ; lũy kế 1,760,100 vs cộng lệnh 1,758,700"
+  },
+  {
+   "symbol": "DCM",
+   "date": "2026-11-17",
+   "check": "acc_vol",
+   "level": "warn",
+   "detail": "nguồn thiếu 1,200 cp (0.09%) ở 2 chỗ; lũy kế 1,406,800 vs cộng lệnh 1,405,600"
+  },
+  {
+   "symbol": "DCV",
+   "date": "2026-11-17",
+   "check": "incomplete_day",
+   "level": "warn",
+   "detail": "lệnh cuối lúc 13:06:25 < 14:45:00 → có thể lấy giữa phiên"
+  },
+  {
+   "symbol": "DDV",
+   "date": "2026-11-17",
+   "check": "acc_vol",
+   "level": "warn",
+   "detail": "nguồn thiếu 1,200 cp (0.29%) ở 2 chỗ; lũy kế 411,100 vs cộng lệnh 409,900"
+  },
+  {
+   "symbol": "DHC",
+   "date": "2026-11-17",
+   "check": "acc_vol",
+   "level": "warn",
+   "detail": "nguồn thiếu 1,300 cp (0.25%) ở 1 chỗ; lũy kế 513,700 vs cộng lệnh 512,400"
+  },
+  {
+   "symbol": "DHD",
+   "date": "2026-11-17",
+   "check": "incomplete_day",
+   "level": "warn",
+   "detail": "lệnh cuối lúc 13:53:55 < 14:45:00 → có thể lấy giữa phiên"
+  },
+  {
+   "symbol": "DHT",
+   "date": "2026-11-17",
+   "check": "incomplete_day",
+   "level": "warn",
+   "detail": "lệnh cuối lúc 14:28:31 < 14:45:00 → có thể lấy giữa phiên"
+  },
+  {
+   "symbol": "DIG",
+   "date": "2026-11-17",
+   "check": "acc_vol",
+   "level": "error",
+   "detail": "nguồn thiếu 33,200 cp (0.61%) ở 1 chỗ; lũy kế 5,485,600 vs cộng lệnh 5,452,400"
+  },
+  {
+   "symbol": "DMC",
+   "date": "2026-11-17",
+   "check": "incomplete_day",
+   "level": "warn",
+   "detail": "lệnh cuối lúc 14:07:31 < 14:45:00 → có thể lấy giữa phiên"
+  },
+  {
+   "symbol": "DNA",
+   "date": "2026-11-17",
+   "check": "incomplete_day",
+   "level": "warn",
+   "detail": "lệnh cuối lúc 11:04:55 < 14:45:00 → có thể lấy giữa phiên"
+  },
+  {
+   "symbol": "DNN",
+   "date": "2026-11-17",
+   "check": "incomplete_day",
+   "level": "warn",
+   "detail": "lệnh cuối lúc 13:17:33 < 14:45:00 → có thể lấy giữa phiên"
+  },
+  {
+   "symbol": "DP3",
+   "date": "2026-11-17",
+   "check": "acc_vol",
+   "level": "error",
+   "detail": "nguồn thiếu 700 cp (10.77%) ở 1 chỗ; lũy kế 6,500 vs cộng lệnh 5,800"
+  },
+  {
+   "symbol": "DPM",
+   "date": "2026-11-17",
+   "check": "acc_vol",
+   "level": "warn",
+   "detail": "nguồn thiếu 700 cp (0.04%) ở 1 chỗ; lũy kế 1,882,700 vs cộng lệnh 1,882,000"
+  },
+  {
+   "symbol": "DPR",
+   "date": "2026-11-17",
+   "check": "acc_vol",
+   "level": "warn",
+   "detail": "nguồn thiếu 100 cp (0.04%) ở 1 chỗ; lũy kế 256,800 vs cộng lệnh 256,700"
+  },
+  {
+   "symbol": "DRC",
+   "date": "2026-11-17",
+   "check": "acc_vol",
+   "level": "warn",
+   "detail": "nguồn thiếu 200 cp (0.21%) ở 1 chỗ; lũy kế 94,500 vs cộng lệnh 94,300"
+  },
+  {
+   "symbol": "DRG",
+   "date": "2026-11-17",
+   "check": "incomplete_day",
+   "level": "warn",
+   "detail": "lệnh cuối lúc 09:21:43 < 14:45:00 → có thể lấy giữa phiên"
+  },
+  {
+   "symbol": "DRI",
+   "date": "2026-11-17",
+   "check": "acc_vol",
+   "level": "error",
+   "detail": "nguồn thiếu 41,200 cp (3.74%) ở 3 chỗ; lũy kế 1,102,000 vs cộng lệnh 1,060,800"
+  },
+  {
+   "symbol": "DSC",
+   "date": "2026-11-17",
+   "check": "incomplete_day",
+   "level": "warn",
+   "detail": "lệnh cuối lúc 14:17:08 < 14:45:00 → có thể lấy giữa phiên"
+  },
+  {
+   "symbol": "DTK",
+   "date": "2026-11-17",
+   "check": "incomplete_day",
+   "level": "warn",
+   "detail": "lệnh cuối lúc 09:19:19 < 14:45:00 → có thể lấy giữa phiên"
+  },
+  {
+   "symbol": "DTL",
+   "date": "2026-11-17",
+   "check": "incomplete_day",
+   "level": "warn",
+   "detail": "lệnh cuối lúc 10:43:08 < 14:45:00 → có thể lấy giữa phiên"
+  },
+  {
+   "symbol": "DTP",
+   "date": "2026-11-17",
+   "check": "incomplete_day",
+   "level": "warn",
+   "detail": "lệnh cuối lúc 14:19:45 < 14:45:00 → có thể lấy giữa phiên"
+  },
+  {
+   "symbol": "DXG",
+   "date": "2026-11-17",
+   "check": "acc_vol",
+   "level": "warn",
+   "detail": "nguồn thiếu 22,500 cp (0.25%) ở 1 chỗ; lũy kế 9,090,000 vs cộng lệnh 9,067,500"
+  },
+  {
+   "symbol": "DXP",
+   "date": "2026-11-17",
+   "check": "acc_vol",
+   "level": "error",
+   "detail": "nguồn thiếu 2,600 cp (0.53%) ở 2 chỗ; lũy kế 491,000 vs cộng lệnh 488,400"
+  },
+  {
+   "symbol": "EIB",
+   "date": "2026-11-17",
+   "check": "acc_vol",
+   "level": "warn",
+   "detail": "nguồn thiếu 300 cp (0.01%) ở 1 chỗ; lũy kế 3,162,000 vs cộng lệnh 3,161,700"
+  },
+  {
+   "symbol": "EIC",
+   "date": "2026-11-17",
+   "check": "incomplete_day",
+   "level": "warn",
+   "detail": "lệnh cuối lúc 09:32:20 < 14:45:00 → có thể lấy giữa phiên"
+  },
+  {
+   "symbol": "FCN",
+   "date": "2026-11-17",
+   "check": "acc_vol",
+   "level": "warn",
+   "detail": "nguồn thiếu 100 cp (0.02%) ở 1 chỗ; lũy kế 413,400 vs cộng lệnh 413,300"
+  },
+  {
+   "symbol": "FIC",
+   "date": "2026-11-17",
+   "check": "incomplete_day",
+   "level": "warn",
+   "detail": "lệnh cuối lúc 13:25:40 < 14:45:00 → có thể lấy giữa phiên"
+  },
+  {
+   "symbol": "FOC",
+   "date": "2026-11-17",
+   "check": "incomplete_day",
+   "level": "warn",
+   "detail": "lệnh cuối lúc 14:03:14 < 14:45:00 → có thể lấy giữa phiên"
+  },
+  {
+   "symbol": "FOX",
+   "date": "2026-11-17",
+   "check": "acc_vol",
+   "level": "error",
+   "detail": "nguồn thiếu 1,300 cp (3.05%) ở 1 chỗ; lũy kế 42,600 vs cộng lệnh 41,300"
+  },
+  {
+   "symbol": "FPT",
+   "date": "2026-11-17",
+   "check": "acc_vol",
+   "level": "warn",
+   "detail": "nguồn thiếu 16,700 cp (0.15%) ở 4 chỗ; lũy kế 10,825,500 vs cộng lệnh 10,808,800"
+  },
+  {
+   "symbol": "FRT",
+   "date": "2026-11-17",
+   "check": "acc_vol",
+   "level": "error",
+   "detail": "nguồn thiếu 700 cp (0.86%) ở 1 chỗ; lũy kế 81,200 vs cộng lệnh 80,500"
+  },
+  {
+   "symbol": "GAS",
+   "date": "2026-11-17",
+   "check": "acc_vol",
+   "level": "warn",
+   "detail": "nguồn thiếu 200 cp (0.02%) ở 1 chỗ; lũy kế 1,123,700 vs cộng lệnh 1,123,500"
+  },
+  {
+   "symbol": "GEE",
+   "date": "2026-11-17",
+   "check": "acc_vol",
+   "level": "warn",
+   "detail": "nguồn thiếu 500 cp (0.06%) ở 1 chỗ; lũy kế 817,900 vs cộng lệnh 817,400"
+  },
+  {
+   "symbol": "GEL",
+   "date": "2026-11-17",
+   "check": "acc_vol",
+   "level": "error",
+   "detail": "nguồn thiếu 5,600 cp (0.59%) ở 2 chỗ; lũy kế 948,600 vs cộng lệnh 943,000"
+  },
+  {
+   "symbol": "GEX",
+   "date": "2026-11-17",
+   "check": "acc_vol",
+   "level": "warn",
+   "detail": "nguồn thiếu 1,300 cp (0.01%) ở 2 chỗ; lũy kế 13,275,900 vs cộng lệnh 13,274,600"
+  },
+  {
+   "symbol": "GHC",
+   "date": "2026-11-17",
+   "check": "incomplete_day",
+   "level": "warn",
+   "detail": "lệnh cuối lúc 14:29:01 < 14:45:00 → có thể lấy giữa phiên"
+  },
+  {
+   "symbol": "GIL",
+   "date": "2026-11-17",
+   "check": "acc_vol",
+   "level": "warn",
+   "detail": "nguồn thiếu 600 cp (0.48%) ở 1 chỗ; lũy kế 123,800 vs cộng lệnh 123,200"
+  },
+  {
+   "symbol": "GMD",
+   "date": "2026-11-17",
+   "check": "acc_vol",
+   "level": "warn",
+   "detail": "nguồn thiếu 1,400 cp (0.11%) ở 1 chỗ; lũy kế 1,255,400 vs cộng lệnh 1,254,000"
+  },
+  {
+   "symbol": "GSM",
+   "date": "2026-11-17",
+   "check": "incomplete_day",
+   "level": "warn",
+   "detail": "lệnh cuối lúc 14:23:41 < 14:45:00 → có thể lấy giữa phiên"
+  },
+  {
+   "symbol": "GSP",
+   "date": "2026-11-17",
+   "check": "acc_vol",
+   "level": "warn",
+   "detail": "nguồn thiếu 100 cp (0.29%) ở 1 chỗ; lũy kế 35,000 vs cộng lệnh 34,900"
+  },
+  {
+   "symbol": "GVR",
+   "date": "2026-11-17",
+   "check": "acc_vol",
+   "level": "warn",
+   "detail": "nguồn thiếu 3,800 cp (0.23%) ở 2 chỗ; lũy kế 1,639,300 vs cộng lệnh 1,635,500"
+  },
+  {
+   "symbol": "HAG",
+   "date": "2026-11-17",
+   "check": "acc_vol",
+   "level": "warn",
+   "detail": "nguồn thiếu 100 cp (0.01%) ở 1 chỗ; lũy kế 1,218,700 vs cộng lệnh 1,218,600"
+  },
+  {
+   "symbol": "HAP",
+   "date": "2026-11-17",
+   "check": "incomplete_day",
+   "level": "warn",
+   "detail": "lệnh cuối lúc 14:29:52 < 14:45:00 → có thể lấy giữa phiên"
+  },
+  {
+   "symbol": "HBC",
+   "date": "2026-11-17",
+   "check": "acc_vol",
+   "level": "warn",
+   "detail": "nguồn thiếu 100 cp (0.04%) ở 1 chỗ; lũy kế 226,200 vs cộng lệnh 226,100"
+  },
+  {
+   "symbol": "HDC",
+   "date": "2026-11-17",
+   "check": "acc_vol",
+   "level": "warn",
+   "detail": "nguồn thiếu 1,500 cp (0.07%) ở 1 chỗ; lũy kế 2,102,800 vs cộng lệnh 2,101,300"
+  },
+  {
+   "symbol": "HDG",
+   "date": "2026-11-17",
+   "check": "acc_vol",
+   "level": "warn",
+   "detail": "nguồn thiếu 8,100 cp (0.26%) ở 2 chỗ; lũy kế 3,151,100 vs cộng lệnh 3,143,000"
+  },
+  {
+   "symbol": "HHV",
+   "date": "2026-11-17",
+   "check": "acc_vol",
+   "level": "warn",
+   "detail": "nguồn thiếu 500 cp (0.02%) ở 1 chỗ; lũy kế 2,590,100 vs cộng lệnh 2,589,600"
+  },
+  {
+   "symbol": "HNA",
+   "date": "2026-11-17",
+   "check": "incomplete_day",
+   "level": "warn",
+   "detail": "lệnh cuối lúc 13:47:39 < 14:45:00 → có thể lấy giữa phiên"
+  },
+  {
+   "symbol": "HND",
+   "date": "2026-11-17",
+   "check": "incomplete_day",
+   "level": "warn",
+   "detail": "lệnh cuối lúc 14:20:30 < 14:45:00 → có thể lấy giữa phiên"
+  },
+  {
+   "symbol": "HNG",
+   "date": "2026-11-17",
+   "check": "acc_vol",
+   "level": "error",
+   "detail": "nguồn thiếu 25,600 cp (4.36%) ở 3 chỗ; lũy kế 587,100 vs cộng lệnh 561,500"
+  },
+  {
+   "symbol": "HPG",
+   "date": "2026-11-17",
+   "check": "acc_vol",
+   "level": "warn",
+   "detail": "nguồn thiếu 3,500 cp (0.03%) ở 2 chỗ; lũy kế 12,663,600 vs cộng lệnh 12,660,100"
+  },
+  {
+   "symbol": "HQC",
+   "date": "2026-11-17",
+   "check": "acc_vol",
+   "level": "error",
+   "detail": "nguồn thiếu 5,500 cp (0.60%) ở 1 chỗ; lũy kế 923,100 vs cộng lệnh 917,600"
+  },
+  {
+   "symbol": "HRC",
+   "date": "2026-11-17",
+   "check": "incomplete_day",
+   "level": "warn",
+   "detail": "lệnh cuối lúc 14:25:28 < 14:45:00 → có thể lấy giữa phiên"
+  },
+  {
+   "symbol": "HT1",
+   "date": "2026-11-17",
+   "check": "acc_vol",
+   "level": "warn",
+   "detail": "nguồn thiếu 500 cp (0.12%) ở 1 chỗ; lũy kế 410,900 vs cộng lệnh 410,400"
+  },
+  {
+   "symbol": "HUT",
+   "date": "2026-11-17",
+   "check": "acc_vol",
+   "level": "error",
+   "detail": "nguồn thiếu 80,300 cp (2.63%) ở 2 chỗ; lũy kế 3,050,700 vs cộng lệnh 2,970,400"
+  },
+  {
+   "symbol": "HWS",
+   "date": "2026-11-17",
+   "check": "incomplete_day",
+   "level": "warn",
+   "detail": "lệnh cuối lúc 14:22:01 < 14:45:00 → có thể lấy giữa phiên"
+  },
+  {
+   "symbol": "ICN",
+   "date": "2026-11-17",
+   "check": "incomplete_day",
+   "level": "warn",
+   "detail": "lệnh cuối lúc 10:13:38 < 14:45:00 → có thể lấy giữa phiên"
+  },
+  {
+   "symbol": "IDC",
+   "date": "2026-11-17",
+   "check": "acc_vol",
+   "level": "error",
+   "detail": "nguồn thiếu 7,800 cp (1.60%) ở 2 chỗ; lũy kế 488,600 vs cộng lệnh 480,800"
+  },
+  {
+   "symbol": "IDI",
+   "date": "2026-11-17",
+   "check": "acc_vol",
+   "level": "warn",
+   "detail": "nguồn thiếu 500 cp (0.35%) ở 1 chỗ; lũy kế 142,800 vs cộng lệnh 142,300"
+  },
+  {
+   "symbol": "IDV",
+   "date": "2026-11-17",
+   "check": "incomplete_day",
+   "level": "warn",
+   "detail": "lệnh cuối lúc 14:22:58 < 14:45:00 → có thể lấy giữa phiên"
+  },
+  {
+   "symbol": "IFS",
+   "date": "2026-11-17",
+   "check": "incomplete_day",
+   "level": "warn",
+   "detail": "lệnh cuối lúc 10:21:15 < 14:45:00 → có thể lấy giữa phiên"
+  },
+  {
+   "symbol": "ILB",
+   "date": "2026-11-17",
+   "check": "incomplete_day",
+   "level": "warn",
+   "detail": "lệnh cuối lúc 11:14:54 < 14:45:00 → có thể lấy giữa phiên"
+  },
+  {
+   "symbol": "INN",
+   "date": "2026-11-17",
+   "check": "acc_vol",
+   "level": "error",
+   "detail": "nguồn thiếu 100 cp (2.22%) ở 1 chỗ; lũy kế 4,500 vs cộng lệnh 4,400"
+  },
+  {
+   "symbol": "INN",
+   "date": "2026-11-17",
+   "check": "incomplete_day",
+   "level": "warn",
+   "detail": "lệnh cuối lúc 13:49:46 < 14:45:00 → có thể lấy giữa phiên"
+  },
+  {
+   "symbol": "IPA",
+   "date": "2026-11-17",
+   "check": "incomplete_day",
+   "level": "warn",
+   "detail": "lệnh cuối lúc 14:29:37 < 14:45:00 → có thể lấy giữa phiên"
+  },
+  {
+   "symbol": "ISH",
+   "date": "2026-11-17",
+   "check": "incomplete_day",
+   "level": "warn",
+   "detail": "lệnh cuối lúc 09:39:06 < 14:45:00 → có thể lấy giữa phiên"
+  },
+  {
+   "symbol": "KDH",
+   "date": "2026-11-17",
+   "check": "acc_vol",
+   "level": "warn",
+   "detail": "nguồn thiếu 32,800 cp (0.26%) ở 2 chỗ; lũy kế 12,387,800 vs cộng lệnh 12,355,000"
+  },
+  {
+   "symbol": "KHG",
+   "date": "2026-11-17",
+   "check": "acc_vol",
+   "level": "warn",
+   "detail": "nguồn thiếu 5,000 cp (0.06%) ở 1 chỗ; lũy kế 8,790,300 vs cộng lệnh 8,785,300"
+  },
+  {
+   "symbol": "KLB",
+   "date": "2026-11-17",
+   "check": "acc_vol",
+   "level": "error",
+   "detail": "nguồn thiếu 2,000 cp (1.13%) ở 1 chỗ; lũy kế 177,200 vs cộng lệnh 175,200"
+  },
+  {
+   "symbol": "KOS",
+   "date": "2026-11-17",
+   "check": "acc_vol",
+   "level": "error",
+   "detail": "nguồn thiếu 28,800 cp (0.62%) ở 1 chỗ; lũy kế 4,625,400 vs cộng lệnh 4,596,600"
+  },
+  {
+   "symbol": "KSF",
+   "date": "2026-11-17",
+   "check": "incomplete_day",
+   "level": "warn",
+   "detail": "lệnh cuối lúc 14:24:28 < 14:45:00 → có thể lấy giữa phiên"
+  },
+  {
+   "symbol": "LAS",
+   "date": "2026-11-17",
+   "check": "acc_vol",
+   "level": "error",
+   "detail": "nguồn thiếu 4,800 cp (3.56%) ở 1 chỗ; lũy kế 134,800 vs cộng lệnh 130,000"
+  },
+  {
+   "symbol": "LBM",
+   "date": "2026-11-17",
+   "check": "incomplete_day",
+   "level": "warn",
+   "detail": "lệnh cuối lúc 10:27:04 < 14:45:00 → có thể lấy giữa phiên"
+  },
+  {
+   "symbol": "LCG",
+   "date": "2026-11-17",
+   "check": "acc_vol",
+   "level": "warn",
+   "detail": "nguồn thiếu 200 cp (0.04%) ở 1 chỗ; lũy kế 483,100 vs cộng lệnh 482,900"
+  },
+  {
+   "symbol": "LIC",
+   "date": "2026-11-17",
+   "check": "incomplete_day",
+   "level": "warn",
+   "detail": "lệnh cuối lúc 13:48:46 < 14:45:00 → có thể lấy giữa phiên"
+  },
+  {
+   "symbol": "LIX",
+   "date": "2026-11-17",
+   "check": "acc_vol",
+   "level": "warn",
+   "detail": "nguồn thiếu 100 cp (0.27%) ở 1 chỗ; lũy kế 36,800 vs cộng lệnh 36,700"
+  },
+  {
+   "symbol": "LLM",
+   "date": "2026-11-17",
+   "check": "acc_vol",
+   "level": "error",
+   "detail": "nguồn thiếu 1,100 cp (1.78%) ở 2 chỗ; lũy kế 61,700 vs cộng lệnh 60,600"
+  },
+  {
+   "symbol": "MBB",
+   "date": "2026-11-17",
+   "check": "acc_vol",
+   "level": "warn",
+   "detail": "nguồn thiếu 2,600 cp (0.02%) ở 2 chỗ; lũy kế 11,184,400 vs cộng lệnh 11,181,800"
+  },
+  {
+   "symbol": "MBS",
+   "date": "2026-11-17",
+   "check": "acc_vol",
+   "level": "error",
+   "detail": "nguồn thiếu 78,000 cp (3.11%) ở 9 chỗ; lũy kế 2,508,600 vs cộng lệnh 2,430,600"
+  },
+  {
+   "symbol": "MCM",
+   "date": "2026-11-17",
+   "check": "incomplete_day",
+   "level": "warn",
+   "detail": "lệnh cuối lúc 14:04:09 < 14:45:00 → có thể lấy giữa phiên"
+  },
+  {
+   "symbol": "MIG",
+   "date": "2026-11-17",
+   "check": "acc_vol",
+   "level": "error",
+   "detail": "nguồn thiếu 3,800 cp (6.97%) ở 1 chỗ; lũy kế 54,500 vs cộng lệnh 50,700"
+  },
+  {
+   "symbol": "MML",
+   "date": "2026-11-17",
+   "check": "acc_vol",
+   "level": "error",
+   "detail": "nguồn thiếu 200 cp (0.63%) ở 0 chỗ; lũy kế 31,700 vs cộng lệnh 31,500"
+  },
+  {
+   "symbol": "MPC",
+   "date": "2026-11-17",
+   "check": "incomplete_day",
+   "level": "warn",
+   "detail": "lệnh cuối lúc 09:35:49 < 14:45:00 → có thể lấy giữa phiên"
+  },
+  {
+   "symbol": "MSN",
+   "date": "2026-11-17",
+   "check": "acc_vol",
+   "level": "warn",
+   "detail": "nguồn thiếu 4,000 cp (0.11%) ở 2 chỗ; lũy kế 3,704,800 vs cộng lệnh 3,700,800"
+  },
+  {
+   "symbol": "MSR",
+   "date": "2026-11-17",
+   "check": "acc_vol",
+   "level": "warn",
+   "detail": "nguồn thiếu 12,500 cp (0.38%) ở 7 chỗ; lũy kế 3,279,400 vs cộng lệnh 3,266,900"
+  },
+  {
+   "symbol": "MST",
+   "date": "2026-11-17",
+   "check": "acc_vol",
+   "level": "error",
+   "detail": "nguồn thiếu 10,700 cp (1.06%) ở 3 chỗ; lũy kế 1,010,100 vs cộng lệnh 999,400"
+  },
+  {
+   "symbol": "MTA",
+   "date": "2026-11-17",
+   "check": "incomplete_day",
+   "level": "warn",
+   "detail": "lệnh cuối lúc 14:27:57 < 14:45:00 → có thể lấy giữa phiên"
+  },
+  {
+   "symbol": "MVC",
+   "date": "2026-11-17",
+   "check": "acc_vol",
+   "level": "error",
+   "detail": "nguồn thiếu 1,400 cp (0.89%) ở 1 chỗ; lũy kế 157,400 vs cộng lệnh 156,000"
+  },
+  {
+   "symbol": "MWG",
+   "date": "2026-11-17",
+   "check": "acc_vol",
+   "level": "error",
+   "detail": "nguồn thiếu 12,500 cp (0.69%) ở 1 chỗ; lũy kế 1,811,100 vs cộng lệnh 1,798,600"
+  },
+  {
+   "symbol": "NET",
+   "date": "2026-11-17",
+   "check": "incomplete_day",
+   "level": "warn",
+   "detail": "lệnh cuối lúc 14:09:08 < 14:45:00 → có thể lấy giữa phiên"
+  },
+  {
+   "symbol": "NKG",
+   "date": "2026-11-17",
+   "check": "acc_vol",
+   "level": "warn",
+   "detail": "nguồn thiếu 7,000 cp (0.24%) ở 1 chỗ; lũy kế 2,910,100 vs cộng lệnh 2,903,100"
+  },
+  {
+   "symbol": "NLG",
+   "date": "2026-11-17",
+   "check": "acc_vol",
+   "level": "warn",
+   "detail": "nguồn thiếu 800 cp (0.07%) ở 1 chỗ; lũy kế 1,099,400 vs cộng lệnh 1,098,600"
+  },
+  {
+   "symbol": "NSC",
+   "date": "2026-11-17",
+   "check": "incomplete_day",
+   "level": "warn",
+   "detail": "lệnh cuối lúc 13:36:40 < 14:45:00 → có thể lấy giữa phiên"
+  },
+  {
+   "symbol": "NT2",
+   "date": "2026-11-17",
+   "check": "acc_vol",
+   "level": "error",
+   "detail": "nguồn thiếu 20,800 cp (0.75%) ở 2 chỗ; lũy kế 2,785,900 vs cộng lệnh 2,765,100"
+  },
+  {
+   "symbol": "NTL",
+   "date": "2026-11-17",
+   "check": "acc_vol",
+   "level": "warn",
+   "detail": "nguồn thiếu 300 cp (0.09%) ở 1 chỗ; lũy kế 323,600 vs cộng lệnh 323,300"
+  },
+  {
+   "symbol": "NTP",
+   "date": "2026-11-17",
+   "check": "acc_vol",
+   "level": "error",
+   "detail": "nguồn thiếu 7,400 cp (2.60%) ở 3 chỗ; lũy kế 285,100 vs cộng lệnh 277,700"
+  },
+  {
+   "symbol": "NVB",
+   "date": "2026-11-17",
+   "check": "acc_vol",
+   "level": "warn",
+   "detail": "nguồn thiếu 7,500 cp (0.37%) ở 3 chỗ; lũy kế 2,013,900 vs cộng lệnh 2,006,400"
+  },
+  {
+   "symbol": "NVL",
+   "date": "2026-11-17",
+   "check": "acc_vol",
+   "level": "warn",
+   "detail": "nguồn thiếu 100 cp (0.00%) ở 1 chỗ; lũy kế 8,654,900 vs cộng lệnh 8,654,800"
+  },
+  {
+   "symbol": "OCH",
+   "date": "2026-11-17",
+   "check": "acc_vol",
+   "level": "warn",
+   "detail": "nguồn thiếu 400 cp (0.40%) ở 1 chỗ; lũy kế 100,200 vs cộng lệnh 99,800"
+  },
+  {
+   "symbol": "OGC",
+   "date": "2026-11-17",
+   "check": "acc_vol",
+   "level": "warn",
+   "detail": "nguồn thiếu 500 cp (0.16%) ở 1 chỗ; lũy kế 308,400 vs cộng lệnh 307,900"
+  },
+  {
+   "symbol": "OIL",
+   "date": "2026-11-17",
+   "check": "acc_vol",
+   "level": "warn",
+   "detail": "nguồn thiếu 5,900 cp (0.37%) ở 4 chỗ; lũy kế 1,573,600 vs cộng lệnh 1,567,700"
+  },
+  {
+   "symbol": "ORS",
+   "date": "2026-11-17",
+   "check": "acc_vol",
+   "level": "warn",
+   "detail": "nguồn thiếu 4,900 cp (0.26%) ở 2 chỗ; lũy kế 1,861,200 vs cộng lệnh 1,856,300"
+  },
+  {
+   "symbol": "PAN",
+   "date": "2026-11-17",
+   "check": "acc_vol",
+   "level": "warn",
+   "detail": "nguồn thiếu 200 cp (0.07%) ở 1 chỗ; lũy kế 286,900 vs cộng lệnh 286,700"
+  },
+  {
+   "symbol": "PAP",
+   "date": "2026-11-17",
+   "check": "incomplete_day",
+   "level": "warn",
+   "detail": "lệnh cuối lúc 14:02:07 < 14:45:00 → có thể lấy giữa phiên"
+  },
+  {
+   "symbol": "PAT",
+   "date": "2026-11-17",
+   "check": "incomplete_day",
+   "level": "warn",
+   "detail": "lệnh cuối lúc 13:37:56 < 14:45:00 → có thể lấy giữa phiên"
+  },
+  {
+   "symbol": "PDN",
+   "date": "2026-11-17",
+   "check": "incomplete_day",
+   "level": "warn",
+   "detail": "lệnh cuối lúc 14:18:37 < 14:45:00 → có thể lấy giữa phiên"
+  },
+  {
+   "symbol": "PDR",
+   "date": "2026-11-17",
+   "check": "acc_vol",
+   "level": "warn",
+   "detail": "nguồn thiếu 1,000 cp (0.02%) ở 1 chỗ; lũy kế 4,261,700 vs cộng lệnh 4,260,700"
+  },
+  {
+   "symbol": "PEG",
+   "date": "2026-11-17",
+   "check": "incomplete_day",
+   "level": "warn",
+   "detail": "lệnh cuối lúc 09:00:00 < 14:45:00 → có thể lấy giữa phiên"
+  },
+  {
+   "symbol": "PET",
+   "date": "2026-11-17",
+   "check": "acc_vol",
+   "level": "warn",
+   "detail": "nguồn thiếu 600 cp (0.15%) ở 1 chỗ; lũy kế 412,800 vs cộng lệnh 412,200"
+  },
+  {
+   "symbol": "PGB",
+   "date": "2026-11-17",
+   "check": "incomplete_day",
+   "level": "warn",
+   "detail": "lệnh cuối lúc 13:49:42 < 14:45:00 → có thể lấy giữa phiên"
+  },
+  {
+   "symbol": "PGD",
+   "date": "2026-11-17",
+   "check": "incomplete_day",
+   "level": "warn",
+   "detail": "lệnh cuối lúc 13:48:00 < 14:45:00 → có thể lấy giữa phiên"
+  },
+  {
+   "symbol": "PGI",
+   "date": "2026-11-17",
+   "check": "incomplete_day",
+   "level": "warn",
+   "detail": "lệnh cuối lúc 09:28:55 < 14:45:00 → có thể lấy giữa phiên"
+  },
+  {
+   "symbol": "PGS",
+   "date": "2026-11-17",
+   "check": "incomplete_day",
+   "level": "warn",
+   "detail": "lệnh cuối lúc 13:25:21 < 14:45:00 → có thể lấy giữa phiên"
+  },
+  {
+   "symbol": "PHP",
+   "date": "2026-11-17",
+   "check": "acc_vol",
+   "level": "warn",
+   "detail": "nguồn thiếu 100 cp (0.03%) ở 1 chỗ; lũy kế 333,600 vs cộng lệnh 333,500"
+  },
+  {
+   "symbol": "PLC",
+   "date": "2026-11-17",
+   "check": "acc_vol",
+   "level": "error",
+   "detail": "nguồn thiếu 3,700 cp (2.45%) ở 1 chỗ; lũy kế 150,800 vs cộng lệnh 147,100"
+  },
+  {
+   "symbol": "PLX",
+   "date": "2026-11-17",
+   "check": "acc_vol",
+   "level": "warn",
+   "detail": "nguồn thiếu 300 cp (0.01%) ở 2 chỗ; lũy kế 2,707,900 vs cộng lệnh 2,707,600"
+  },
+  {
+   "symbol": "PMW",
+   "date": "2026-11-17",
+   "check": "incomplete_day",
+   "level": "warn",
+   "detail": "lệnh cuối lúc 14:42:22 < 14:45:00 → có thể lấy giữa phiên"
+  },
+  {
+   "symbol": "PNJ",
+   "date": "2026-11-17",
+   "check": "acc_vol",
+   "level": "warn",
+   "detail": "nguồn thiếu 1,700 cp (0.05%) ở 1 chỗ; lũy kế 3,133,000 vs cộng lệnh 3,131,300"
+  },
+  {
+   "symbol": "POW",
+   "date": "2026-11-17",
+   "check": "acc_vol",
+   "level": "warn",
+   "detail": "nguồn thiếu 4,300 cp (0.03%) ở 1 chỗ; lũy kế 16,711,300 vs cộng lệnh 16,707,000"
+  },
+  {
+   "symbol": "PRT",
+   "date": "2026-11-17",
+   "check": "incomplete_day",
+   "level": "warn",
+   "detail": "lệnh cuối lúc 13:13:20 < 14:45:00 → có thể lấy giữa phiên"
+  },
+  {
+   "symbol": "PSD",
+   "date": "2026-11-17",
+   "check": "acc_vol",
+   "level": "error",
+   "detail": "nguồn thiếu 4,800 cp (6.04%) ở 2 chỗ; lũy kế 79,500 vs cộng lệnh 74,700"
+  },
+  {
+   "symbol": "PVC",
+   "date": "2026-11-17",
+   "check": "acc_vol",
+   "level": "error",
+   "detail": "nguồn thiếu 8,300 cp (1.73%) ở 2 chỗ; lũy kế 480,400 vs cộng lệnh 472,100"
+  },
+  {
+   "symbol": "PVD",
+   "date": "2026-11-17",
+   "check": "acc_vol",
+   "level": "warn",
+   "detail": "nguồn thiếu 1,800 cp (0.06%) ở 1 chỗ; lũy kế 3,046,600 vs cộng lệnh 3,044,800"
+  },
+  {
+   "symbol": "PVI",
+   "date": "2026-11-17",
+   "check": "acc_vol",
+   "level": "error",
+   "detail": "nguồn thiếu 100 cp (4.00%) ở 1 chỗ; lũy kế 2,500 vs cộng lệnh 2,400"
+  },
+  {
+   "symbol": "PVP",
+   "date": "2026-11-17",
+   "check": "acc_vol",
+   "level": "warn",
+   "detail": "nguồn thiếu 100 cp (0.01%) ở 1 chỗ; lũy kế 1,226,600 vs cộng lệnh 1,226,500"
+  },
+  {
+   "symbol": "PVS",
+   "date": "2026-11-17",
+   "check": "acc_vol",
+   "level": "error",
+   "detail": "nguồn thiếu 117,700 cp (3.52%) ở 8 chỗ; lũy kế 3,347,500 vs cộng lệnh 3,229,800"
+  },
+  {
+   "symbol": "PVT",
+   "date": "2026-11-17",
+   "check": "acc_vol",
+   "level": "warn",
+   "detail": "nguồn thiếu 6,100 cp (0.09%) ở 1 chỗ; lũy kế 6,814,900 vs cộng lệnh 6,808,800"
+  },
+  {
+   "symbol": "QNS",
+   "date": "2026-11-17",
+   "check": "acc_vol",
+   "level": "warn",
+   "detail": "nguồn thiếu 100 cp (0.10%) ở 0 chỗ; lũy kế 100,900 vs cộng lệnh 100,800"
+  },
+  {
+   "symbol": "QTP",
+   "date": "2026-11-17",
+   "check": "acc_vol",
+   "level": "warn",
+   "detail": "nguồn thiếu 100 cp (0.07%) ở 1 chỗ; lũy kế 133,400 vs cộng lệnh 133,300"
+  },
+  {
+   "symbol": "RTB",
+   "date": "2026-11-17",
+   "check": "incomplete_day",
+   "level": "warn",
+   "detail": "lệnh cuối lúc 13:00:00 < 14:45:00 → có thể lấy giữa phiên"
+  },
+  {
+   "symbol": "S99",
+   "date": "2026-11-17",
+   "check": "incomplete_day",
+   "level": "warn",
+   "detail": "lệnh cuối lúc 14:28:35 < 14:45:00 → có thể lấy giữa phiên"
+  },
+  {
+   "symbol": "SAF",
+   "date": "2026-11-17",
+   "check": "incomplete_day",
+   "level": "warn",
+   "detail": "lệnh cuối lúc 09:43:48 < 14:45:00 → có thể lấy giữa phiên"
+  },
+  {
+   "symbol": "SAM",
+   "date": "2026-11-17",
+   "check": "acc_vol",
+   "level": "warn",
+   "detail": "nguồn thiếu 100 cp (0.13%) ở 1 chỗ; lũy kế 76,700 vs cộng lệnh 76,600"
+  },
+  {
+   "symbol": "SAS",
+   "date": "2026-11-17",
+   "check": "acc_vol",
+   "level": "warn",
+   "detail": "nguồn thiếu 100 cp (0.15%) ở 1 chỗ; lũy kế 65,600 vs cộng lệnh 65,500"
+  },
+  {
+   "symbol": "SBA",
+   "date": "2026-11-17",
+   "check": "incomplete_day",
+   "level": "warn",
+   "detail": "lệnh cuối lúc 14:24:36 < 14:45:00 → có thể lấy giữa phiên"
+  },
+  {
+   "symbol": "SBB",
+   "date": "2026-11-17",
+   "check": "incomplete_day",
+   "level": "warn",
+   "detail": "lệnh cuối lúc 14:26:53 < 14:45:00 → có thể lấy giữa phiên"
+  },
+  {
+   "symbol": "SBH",
+   "date": "2026-11-17",
+   "check": "incomplete_day",
+   "level": "warn",
+   "detail": "lệnh cuối lúc 10:27:13 < 14:45:00 → có thể lấy giữa phiên"
+  },
+  {
+   "symbol": "SBT",
+   "date": "2026-11-17",
+   "check": "acc_vol",
+   "level": "warn",
+   "detail": "nguồn thiếu 400 cp (0.04%) ở 1 chỗ; lũy kế 1,072,900 vs cộng lệnh 1,072,500"
+  },
+  {
+   "symbol": "SCG",
+   "date": "2026-11-17",
+   "check": "incomplete_day",
+   "level": "warn",
+   "detail": "lệnh cuối lúc 13:55:23 < 14:45:00 → có thể lấy giữa phiên"
+  },
+  {
+   "symbol": "SCL",
+   "date": "2026-11-17",
+   "check": "acc_vol",
+   "level": "error",
+   "detail": "nguồn thiếu 1,100 cp (1.10%) ở 1 chỗ; lũy kế 100,000 vs cộng lệnh 98,900"
+  },
+  {
+   "symbol": "SEA",
+   "date": "2026-11-17",
+   "check": "incomplete_day",
+   "level": "warn",
+   "detail": "lệnh cuối lúc 13:21:23 < 14:45:00 → có thể lấy giữa phiên"
+  },
+  {
+   "symbol": "SFI",
+   "date": "2026-11-17",
+   "check": "incomplete_day",
+   "level": "warn",
+   "detail": "lệnh cuối lúc 13:00:00 < 14:45:00 → có thể lấy giữa phiên"
+  },
+  {
+   "symbol": "SGB",
+   "date": "2026-11-17",
+   "check": "incomplete_day",
+   "level": "warn",
+   "detail": "lệnh cuối lúc 14:09:39 < 14:45:00 → có thể lấy giữa phiên"
+  },
+  {
+   "symbol": "SGI",
+   "date": "2026-11-17",
+   "check": "incomplete_day",
+   "level": "warn",
+   "detail": "lệnh cuối lúc 13:00:00 < 14:45:00 → có thể lấy giữa phiên"
+  },
+  {
+   "symbol": "SGN",
+   "date": "2026-11-17",
+   "check": "incomplete_day",
+   "level": "warn",
+   "detail": "lệnh cuối lúc 14:29:32 < 14:45:00 → có thể lấy giữa phiên"
+  },
+  {
+   "symbol": "SGT",
+   "date": "2026-11-17",
+   "check": "incomplete_day",
+   "level": "warn",
+   "detail": "lệnh cuối lúc 14:26:42 < 14:45:00 → có thể lấy giữa phiên"
+  },
+  {
+   "symbol": "SHB",
+   "date": "2026-11-17",
+   "check": "acc_vol",
+   "level": "warn",
+   "detail": "nguồn thiếu 5,800 cp (0.02%) ở 2 chỗ; lũy kế 24,149,100 vs cộng lệnh 24,143,300"
+  },
+  {
+   "symbol": "SHI",
+   "date": "2026-11-17",
+   "check": "incomplete_day",
+   "level": "warn",
+   "detail": "lệnh cuối lúc 13:00:00 < 14:45:00 → có thể lấy giữa phiên"
+  },
+  {
+   "symbol": "SHN",
+   "date": "2026-11-17",
+   "check": "acc_vol",
+   "level": "error",
+   "detail": "nguồn thiếu 1,100 cp (5.76%) ở 1 chỗ; lũy kế 19,100 vs cộng lệnh 18,000"
+  },
+  {
+   "symbol": "SHS",
+   "date": "2026-11-17",
+   "check": "acc_vol",
+   "level": "error",
+   "detail": "nguồn thiếu 125,500 cp (2.10%) ở 6 chỗ; lũy kế 5,979,400 vs cộng lệnh 5,853,900"
+  },
+  {
+   "symbol": "SJG",
+   "date": "2026-11-17",
+   "check": "incomplete_day",
+   "level": "warn",
+   "detail": "lệnh cuối lúc 13:39:09 < 14:45:00 → có thể lấy giữa phiên"
+  },
+  {
+   "symbol": "SLS",
+   "date": "2026-11-17",
+   "check": "acc_vol",
+   "level": "error",
+   "detail": "nguồn thiếu 100 cp (8.33%) ở 1 chỗ; lũy kế 1,200 vs cộng lệnh 1,100"
+  },
+  {
+   "symbol": "SLS",
+   "date": "2026-11-17",
+   "check": "incomplete_day",
+   "level": "warn",
+   "detail": "lệnh cuối lúc 13:07:33 < 14:45:00 → có thể lấy giữa phiên"
+  },
+  {
+   "symbol": "SMB",
+   "date": "2026-11-17",
+   "check": "incomplete_day",
+   "level": "warn",
+   "detail": "lệnh cuối lúc 13:17:01 < 14:45:00 → có thể lấy giữa phiên"
+  },
+  {
+   "symbol": "SNZ",
+   "date": "2026-11-17",
+   "check": "incomplete_day",
+   "level": "warn",
+   "detail": "lệnh cuối lúc 10:40:10 < 14:45:00 → có thể lấy giữa phiên"
+  },
+  {
+   "symbol": "SSI",
+   "date": "2026-11-17",
+   "check": "acc_vol",
+   "level": "error",
+   "detail": "nguồn thiếu 173,500 cp (1.14%) ở 2 chỗ; lũy kế 15,271,200 vs cộng lệnh 15,097,700"
+  },
+  {
+   "symbol": "STB",
+   "date": "2026-11-17",
+   "check": "acc_vol",
+   "level": "warn",
+   "detail": "nguồn thiếu 300 cp (0.01%) ở 1 chỗ; lũy kế 4,629,400 vs cộng lệnh 4,629,100"
+  },
+  {
+   "symbol": "STG",
+   "date": "2026-11-17",
+   "check": "incomplete_day",
+   "level": "warn",
+   "detail": "lệnh cuối lúc 13:49:40 < 14:45:00 → có thể lấy giữa phiên"
+  },
+  {
+   "symbol": "SZB",
+   "date": "2026-11-17",
+   "check": "acc_vol",
+   "level": "error",
+   "detail": "nguồn thiếu 400 cp (3.23%) ở 1 chỗ; lũy kế 12,400 vs cộng lệnh 12,000"
+  },
+  {
+   "symbol": "SZB",
+   "date": "2026-11-17",
+   "check": "incomplete_day",
+   "level": "warn",
+   "detail": "lệnh cuối lúc 14:29:26 < 14:45:00 → có thể lấy giữa phiên"
+  },
+  {
+   "symbol": "SZC",
+   "date": "2026-11-17",
+   "check": "acc_vol",
+   "level": "warn",
+   "detail": "nguồn thiếu 1,200 cp (0.12%) ở 1 chỗ; lũy kế 1,004,800 vs cộng lệnh 1,003,600"
+  },
+  {
+   "symbol": "SZL",
+   "date": "2026-11-17",
+   "check": "incomplete_day",
+   "level": "warn",
+   "detail": "lệnh cuối lúc 14:29:58 < 14:45:00 → có thể lấy giữa phiên"
+  },
+  {
+   "symbol": "TCB",
+   "date": "2026-11-17",
+   "check": "acc_vol",
+   "level": "warn",
+   "detail": "nguồn thiếu 11,000 cp (0.11%) ở 1 chỗ; lũy kế 9,770,800 vs cộng lệnh 9,759,800"
+  },
+  {
+   "symbol": "TCH",
+   "date": "2026-11-17",
+   "check": "acc_vol",
+   "level": "warn",
+   "detail": "nguồn thiếu 10,600 cp (0.15%) ở 2 chỗ; lũy kế 7,035,900 vs cộng lệnh 7,025,300"
+  },
+  {
+   "symbol": "TCL",
+   "date": "2026-11-17",
+   "check": "incomplete_day",
+   "level": "warn",
+   "detail": "lệnh cuối lúc 14:29:33 < 14:45:00 → có thể lấy giữa phiên"
+  },
+  {
+   "symbol": "TCX",
+   "date": "2026-11-17",
+   "check": "acc_vol",
+   "level": "warn",
+   "detail": "nguồn thiếu 2,000 cp (0.12%) ở 1 chỗ; lũy kế 1,732,600 vs cộng lệnh 1,730,600"
+  },
+  {
+   "symbol": "TDP",
+   "date": "2026-11-17",
+   "check": "acc_vol",
+   "level": "error",
+   "detail": "nguồn thiếu 19,800 cp (8.33%) ở 1 chỗ; lũy kế 237,800 vs cộng lệnh 218,000"
+  },
+  {
+   "symbol": "TED",
+   "date": "2026-11-17",
+   "check": "incomplete_day",
+   "level": "warn",
+   "detail": "lệnh cuối lúc 14:27:06 < 14:45:00 → có thể lấy giữa phiên"
+  },
+  {
+   "symbol": "THD",
+   "date": "2026-11-17",
+   "check": "acc_vol",
+   "level": "error",
+   "detail": "nguồn thiếu 400 cp (1.91%) ở 1 chỗ; lũy kế 20,900 vs cộng lệnh 20,500"
+  },
+  {
+   "symbol": "TID",
+   "date": "2026-11-17",
+   "check": "incomplete_day",
+   "level": "warn",
+   "detail": "lệnh cuối lúc 13:45:28 < 14:45:00 → có thể lấy giữa phiên"
+  },
+  {
+   "symbol": "TIG",
+   "date": "2026-11-17",
+   "check": "acc_vol",
+   "level": "warn",
+   "detail": "nguồn thiếu 13,800 cp (0.38%) ở 5 chỗ; lũy kế 3,674,100 vs cộng lệnh 3,660,300"
+  },
+  {
+   "symbol": "TIP",
+   "date": "2026-11-17",
+   "check": "incomplete_day",
+   "level": "warn",
+   "detail": "lệnh cuối lúc 13:16:36 < 14:45:00 → có thể lấy giữa phiên"
+  },
+  {
+   "symbol": "TIS",
+   "date": "2026-11-17",
+   "check": "incomplete_day",
+   "level": "warn",
+   "detail": "lệnh cuối lúc 13:30:33 < 14:45:00 → có thể lấy giữa phiên"
+  },
+  {
+   "symbol": "TMS",
+   "date": "2026-11-17",
+   "check": "incomplete_day",
+   "level": "warn",
+   "detail": "lệnh cuối lúc 14:19:51 < 14:45:00 → có thể lấy giữa phiên"
+  },
+  {
+   "symbol": "TN1",
+   "date": "2026-11-17",
+   "check": "incomplete_day",
+   "level": "warn",
+   "detail": "lệnh cuối lúc 11:00:01 < 14:45:00 → có thể lấy giữa phiên"
+  },
+  {
+   "symbol": "TNG",
+   "date": "2026-11-17",
+   "check": "acc_vol",
+   "level": "error",
+   "detail": "nguồn thiếu 10,800 cp (1.34%) ở 6 chỗ; lũy kế 803,300 vs cộng lệnh 792,500"
+  },
+  {
+   "symbol": "TPB",
+   "date": "2026-11-17",
+   "check": "acc_vol",
+   "level": "warn",
+   "detail": "nguồn thiếu 20,900 cp (0.26%) ở 2 chỗ; lũy kế 8,111,000 vs cộng lệnh 8,090,100"
+  },
+  {
+   "symbol": "TRA",
+   "date": "2026-11-17",
+   "check": "incomplete_day",
+   "level": "warn",
+   "detail": "lệnh cuối lúc 14:15:06 < 14:45:00 → có thể lấy giữa phiên"
+  },
+  {
+   "symbol": "TTA",
+   "date": "2026-11-17",
+   "check": "incomplete_day",
+   "level": "warn",
+   "detail": "lệnh cuối lúc 14:29:51 < 14:45:00 → có thể lấy giữa phiên"
+  },
+  {
+   "symbol": "TV2",
+   "date": "2026-11-17",
+   "check": "acc_vol",
+   "level": "warn",
+   "detail": "nguồn thiếu 100 cp (0.02%) ở 1 chỗ; lũy kế 546,300 vs cộng lệnh 546,200"
+  },
+  {
+   "symbol": "TVB",
+   "date": "2026-11-17",
+   "check": "incomplete_day",
+   "level": "warn",
+   "detail": "lệnh cuối lúc 11:19:50 < 14:45:00 → có thể lấy giữa phiên"
+  },
+  {
+   "symbol": "VAB",
+   "date": "2026-11-17",
+   "check": "acc_vol",
+   "level": "warn",
+   "detail": "nguồn thiếu 500 cp (0.17%) ở 1 chỗ; lũy kế 296,800 vs cộng lệnh 296,300"
+  },
+  {
+   "symbol": "VAF",
+   "date": "2026-11-17",
+   "check": "incomplete_day",
+   "level": "warn",
+   "detail": "lệnh cuối lúc 14:06:44 < 14:45:00 → có thể lấy giữa phiên"
+  },
+  {
+   "symbol": "VBB",
+   "date": "2026-11-17",
+   "check": "incomplete_day",
+   "level": "warn",
+   "detail": "lệnh cuối lúc 14:27:57 < 14:45:00 → có thể lấy giữa phiên"
+  },
+  {
+   "symbol": "VC3",
+   "date": "2026-11-17",
+   "check": "acc_vol",
+   "level": "warn",
+   "detail": "nguồn thiếu 700 cp (0.07%) ở 1 chỗ; lũy kế 979,100 vs cộng lệnh 978,400"
+  },
+  {
+   "symbol": "VCB",
+   "date": "2026-11-17",
+   "check": "acc_vol",
+   "level": "warn",
+   "detail": "nguồn thiếu 3,600 cp (0.05%) ở 3 chỗ; lũy kế 7,003,000 vs cộng lệnh 6,999,400"
+  },
+  {
+   "symbol": "VCG",
+   "date": "2026-11-17",
+   "check": "acc_vol",
+   "level": "warn",
+   "detail": "nguồn thiếu 400 cp (0.01%) ở 1 chỗ; lũy kế 4,319,300 vs cộng lệnh 4,318,900"
+  },
+  {
+   "symbol": "VCI",
+   "date": "2026-11-17",
+   "check": "acc_vol",
+   "level": "warn",
+   "detail": "nguồn thiếu 21,400 cp (0.42%) ở 2 chỗ; lũy kế 5,048,000 vs cộng lệnh 5,026,600"
+  },
+  {
+   "symbol": "VCK",
+   "date": "2026-11-17",
+   "check": "acc_vol",
+   "level": "warn",
+   "detail": "nguồn thiếu 400 cp (0.02%) ở 1 chỗ; lũy kế 2,054,300 vs cộng lệnh 2,053,900"
+  },
+  {
+   "symbol": "VCP",
+   "date": "2026-11-17",
+   "check": "acc_vol",
+   "level": "error",
+   "detail": "nguồn thiếu 2,400 cp (0.70%) ở 2 chỗ; lũy kế 345,200 vs cộng lệnh 342,800"
+  },
+  {
+   "symbol": "VCR",
+   "date": "2026-11-17",
+   "check": "incomplete_day",
+   "level": "warn",
+   "detail": "lệnh cuối lúc 09:14:00 < 14:45:00 → có thể lấy giữa phiên"
+  },
+  {
+   "symbol": "VCS",
+   "date": "2026-11-17",
+   "check": "acc_vol",
+   "level": "error",
+   "detail": "nguồn thiếu 100 cp (0.83%) ở 1 chỗ; lũy kế 12,100 vs cộng lệnh 12,000"
+  },
+  {
+   "symbol": "VCS",
+   "date": "2026-11-17",
+   "check": "incomplete_day",
+   "level": "warn",
+   "detail": "lệnh cuối lúc 13:52:17 < 14:45:00 → có thể lấy giữa phiên"
+  },
+  {
+   "symbol": "VEA",
+   "date": "2026-11-17",
+   "check": "acc_vol",
+   "level": "error",
+   "detail": "nguồn thiếu 20,600 cp (2.19%) ở 6 chỗ; lũy kế 941,400 vs cộng lệnh 920,800"
+  },
+  {
+   "symbol": "VEC",
+   "date": "2026-11-17",
+   "check": "incomplete_day",
+   "level": "warn",
+   "detail": "lệnh cuối lúc 10:46:23 < 14:45:00 → có thể lấy giữa phiên"
+  },
+  {
+   "symbol": "VEF",
+   "date": "2026-11-17",
+   "check": "incomplete_day",
+   "level": "warn",
+   "detail": "lệnh cuối lúc 14:41:37 < 14:45:00 → có thể lấy giữa phiên"
+  },
+  {
+   "symbol": "VES",
+   "date": "2026-11-17",
+   "check": "incomplete_day",
+   "level": "warn",
+   "detail": "lệnh cuối lúc 13:30:45 < 14:45:00 → có thể lấy giữa phiên"
+  },
+  {
+   "symbol": "VFS",
+   "date": "2026-11-17",
+   "check": "acc_vol",
+   "level": "error",
+   "detail": "nguồn thiếu 44,900 cp (2.90%) ở 1 chỗ; lũy kế 1,545,800 vs cộng lệnh 1,500,900"
+  },
+  {
+   "symbol": "VGC",
+   "date": "2026-11-17",
+   "check": "acc_vol",
+   "level": "warn",
+   "detail": "nguồn thiếu 100 cp (0.07%) ở 1 chỗ; lũy kế 153,300 vs cộng lệnh 153,200"
+  },
+  {
+   "symbol": "VGG",
+   "date": "2026-11-17",
+   "check": "incomplete_day",
+   "level": "warn",
+   "detail": "lệnh cuối lúc 14:13:27 < 14:45:00 → có thể lấy giữa phiên"
+  },
+  {
+   "symbol": "VGI",
+   "date": "2026-11-17",
+   "check": "acc_vol",
+   "level": "error",
+   "detail": "nguồn thiếu 3,100 cp (1.49%) ở 3 chỗ; lũy kế 208,100 vs cộng lệnh 205,000"
+  },
+  {
+   "symbol": "VGR",
+   "date": "2026-11-17",
+   "check": "incomplete_day",
+   "level": "warn",
+   "detail": "lệnh cuối lúc 13:18:09 < 14:45:00 → có thể lấy giữa phiên"
+  },
+  {
+   "symbol": "VGS",
+   "date": "2026-11-17",
+   "check": "acc_vol",
+   "level": "warn",
+   "detail": "nguồn thiếu 800 cp (0.24%) ở 1 chỗ; lũy kế 332,200 vs cộng lệnh 331,400"
+  },
+  {
+   "symbol": "VHM",
+   "date": "2026-11-17",
+   "check": "acc_vol",
+   "level": "warn",
+   "detail": "nguồn thiếu 200 cp (0.01%) ở 1 chỗ; lũy kế 2,690,600 vs cộng lệnh 2,690,400"
+  },
+  {
+   "symbol": "VIB",
+   "date": "2026-11-17",
+   "check": "acc_vol",
+   "level": "warn",
+   "detail": "nguồn thiếu 5,100 cp (0.17%) ở 2 chỗ; lũy kế 3,033,000 vs cộng lệnh 3,027,900"
+  },
+  {
+   "symbol": "VIC",
+   "date": "2026-11-17",
+   "check": "acc_vol",
+   "level": "warn",
+   "detail": "nguồn thiếu 600 cp (0.04%) ở 1 chỗ; lũy kế 1,550,600 vs cộng lệnh 1,550,000"
+  },
+  {
+   "symbol": "VIW",
+   "date": "2026-11-17",
+   "check": "acc_vol",
+   "level": "warn",
+   "detail": "nguồn thiếu 300 cp (0.46%) ở 1 chỗ; lũy kế 65,800 vs cộng lệnh 65,500"
+  },
+  {
+   "symbol": "VIX",
+   "date": "2026-11-17",
+   "check": "acc_vol",
+   "level": "warn",
+   "detail": "nguồn thiếu 1,600 cp (0.01%) ở 1 chỗ; lũy kế 25,020,800 vs cộng lệnh 25,019,200"
+  },
+  {
+   "symbol": "VJC",
+   "date": "2026-11-17",
+   "check": "acc_vol",
+   "level": "warn",
+   "detail": "nguồn thiếu 300 cp (0.03%) ở 1 chỗ; lũy kế 918,000 vs cộng lệnh 917,700"
+  },
+  {
+   "symbol": "VLB",
+   "date": "2026-11-17",
+   "check": "acc_vol",
+   "level": "error",
+   "detail": "nguồn thiếu 1,800 cp (0.90%) ở 3 chỗ; lũy kế 199,300 vs cộng lệnh 197,500"
+  },
+  {
+   "symbol": "VLC",
+   "date": "2026-11-17",
+   "check": "incomplete_day",
+   "level": "warn",
+   "detail": "lệnh cuối lúc 14:32:15 < 14:45:00 → có thể lấy giữa phiên"
+  },
+  {
+   "symbol": "VND",
+   "date": "2026-11-17",
+   "check": "acc_vol",
+   "level": "warn",
+   "detail": "nguồn thiếu 4,100 cp (0.04%) ở 1 chỗ; lũy kế 9,621,700 vs cộng lệnh 9,617,600"
+  },
+  {
+   "symbol": "VNM",
+   "date": "2026-11-17",
+   "check": "acc_vol",
+   "level": "warn",
+   "detail": "nguồn thiếu 1,500 cp (0.06%) ở 3 chỗ; lũy kế 2,635,500 vs cộng lệnh 2,634,000"
+  },
+  {
+   "symbol": "VNZ",
+   "date": "2026-11-17",
+   "check": "incomplete_day",
+   "level": "warn",
+   "detail": "lệnh cuối lúc 14:18:07 < 14:45:00 → có thể lấy giữa phiên"
+  },
+  {
+   "symbol": "VPB",
+   "date": "2026-11-17",
+   "check": "acc_vol",
+   "level": "warn",
+   "detail": "nguồn thiếu 7,200 cp (0.09%) ở 2 chỗ; lũy kế 7,974,000 vs cộng lệnh 7,966,800"
+  },
+  {
+   "symbol": "VPD",
+   "date": "2026-11-17",
+   "check": "incomplete_day",
+   "level": "warn",
+   "detail": "lệnh cuối lúc 13:00:00 < 14:45:00 → có thể lấy giữa phiên"
+  },
+  {
+   "symbol": "VPL",
+   "date": "2026-11-17",
+   "check": "acc_vol",
+   "level": "error",
+   "detail": "nguồn thiếu 5,700 cp (1.26%) ở 1 chỗ; lũy kế 454,100 vs cộng lệnh 448,400"
+  },
+  {
+   "symbol": "VRE",
+   "date": "2026-11-17",
+   "check": "acc_vol",
+   "level": "warn",
+   "detail": "nguồn thiếu 1,000 cp (0.03%) ở 1 chỗ; lũy kế 3,279,700 vs cộng lệnh 3,278,700"
+  },
+  {
+   "symbol": "VSC",
+   "date": "2026-11-17",
+   "check": "acc_vol",
+   "level": "warn",
+   "detail": "nguồn thiếu 7,900 cp (0.13%) ở 1 chỗ; lũy kế 6,174,700 vs cộng lệnh 6,166,800"
+  },
+  {
+   "symbol": "VSF",
+   "date": "2026-11-17",
+   "check": "incomplete_day",
+   "level": "warn",
+   "detail": "lệnh cuối lúc 14:18:31 < 14:45:00 → có thể lấy giữa phiên"
+  },
+  {
+   "symbol": "VSH",
+   "date": "2026-11-17",
+   "check": "incomplete_day",
+   "level": "warn",
+   "detail": "lệnh cuối lúc 14:29:38 < 14:45:00 → có thể lấy giữa phiên"
+  },
+  {
+   "symbol": "VSN",
+   "date": "2026-11-17",
+   "check": "incomplete_day",
+   "level": "warn",
+   "detail": "lệnh cuối lúc 14:16:46 < 14:45:00 → có thể lấy giữa phiên"
+  },
+  {
+   "symbol": "VTZ",
+   "date": "2026-11-17",
+   "check": "acc_vol",
+   "level": "error",
+   "detail": "nguồn thiếu 10,600 cp (1.62%) ở 1 chỗ; lũy kế 654,000 vs cộng lệnh 643,400"
+  },
+  {
+   "symbol": "WSB",
+   "date": "2026-11-17",
+   "check": "incomplete_day",
+   "level": "warn",
+   "detail": "lệnh cuối lúc 13:49:37 < 14:45:00 → có thể lấy giữa phiên"
+  }
+ ]
+}
